@@ -10,6 +10,7 @@
 		682BC0B51BA0F02300A9533F /* ViewController_Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BC0B41BA0F02300A9533F /* ViewController_Chat.swift */; };
 		686570DD1BA263BA0040478D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686570DC1BA263BA0040478D /* User.swift */; };
 		686570DF1BA264AE0040478D /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686570DE1BA264AE0040478D /* Tweet.swift */; };
+		686570E11BA283C90040478D /* TableCell_Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686570E01BA283C90040478D /* TableCell_Tweet.swift */; };
 		687C84061BA24AB90094D1E5 /* bridging.m in Sources */ = {isa = PBXBuildFile; fileRef = 687C84051BA24AB90094D1E5 /* bridging.m */; };
 		687C84091BA24B870094D1E5 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687C84081BA24B870094D1E5 /* TwitterClient.swift */; };
 		68D06AE01BA0E6AF001B6FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D06ADF1BA0E6AF001B6FFC /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		682BC0B41BA0F02300A9533F /* ViewController_Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Chat.swift; sourceTree = "<group>"; };
 		686570DC1BA263BA0040478D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		686570DE1BA264AE0040478D /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		686570E01BA283C90040478D /* TableCell_Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell_Tweet.swift; sourceTree = "<group>"; };
 		687C84041BA24AB80094D1E5 /* IOS_ChatViaParse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOS_ChatViaParse-Bridging-Header.h"; sourceTree = "<group>"; };
 		687C84051BA24AB90094D1E5 /* bridging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridging.m; sourceTree = "<group>"; };
 		687C84081BA24B870094D1E5 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				68D06ADD1BA0E6AF001B6FFC /* Supporting Files */,
 				687C84051BA24AB90094D1E5 /* bridging.m */,
 				687C84041BA24AB80094D1E5 /* IOS_ChatViaParse-Bridging-Header.h */,
+				686570E01BA283C90040478D /* TableCell_Tweet.swift */,
 			);
 			path = IOS_ChatViaParse;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686570E11BA283C90040478D /* TableCell_Tweet.swift in Sources */,
 				687C84091BA24B870094D1E5 /* TwitterClient.swift in Sources */,
 				682BC0B51BA0F02300A9533F /* ViewController_Chat.swift in Sources */,
 				686570DD1BA263BA0040478D /* User.swift in Sources */,

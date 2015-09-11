@@ -13,6 +13,9 @@ var _currentUser: User?
 
 let key_CurrentUser = "key_CurrentUser"
 
+let notif_userDidLogin = "userDidLoginNotification"
+let notif_userDidLogout = "userDidLogoutNotification"
+
 class User: NSObject {
     var name: String?
     var handle: String?
@@ -24,6 +27,13 @@ class User: NSObject {
         name = dict["name"] as? String
         handle = dict["screen_name"] as? String
         profileImage = NSURL(string: dict["profile_image_url"] as! String)
+    }
+    
+
+    func logout() {
+        User.currentUser = nil
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        NSNotificationCenter.defaultCenter().postNotificationName(notif_userDidLogout, object: nil)
     }
     
     
