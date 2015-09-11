@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -20,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Do we already have a logged-in user?
         if User.currentUser != nil {
             // The user is allowed to skip the login!
-            
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TweetstreamVC") as! UIViewController
+            window?.rootViewController = vc
         }
         return true
     }
