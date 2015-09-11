@@ -44,21 +44,21 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     }
     
     
-    func obtainTweets() -> [Tweet] {
+    func fetchTweets(completionBlock: (result: [Tweet], error: NSError?) -> Void) {
         self.GET("1.1/statuses/home_timeline.json", parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                let foo = response as! NSArray
-                for fooin in foo {
-                    let xyz = fooin as! NSDictionary
-                    println(xyz["text"])
+                var result : [Tweet] = []
+                if let listOfTweets = response as? NSArray {
+                    for tweetDict in listOfTweets {
+                        result.append(Tweet(dict: tweetDict as! NSDictionary))
+                    }
                 }
-                let bar = foo
+                completionBlock(result: result, error: nil)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                println(error)
+                completionBlock(result:[], error: error)
             }
         )
-        return []
     }
     
     

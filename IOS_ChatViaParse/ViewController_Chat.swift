@@ -16,6 +16,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     func onTimer() {
     }
     
+    var tweetCollection : [Tweet] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,10 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         tweetStack.rowHeight = UITableViewAutomaticDimension
         tweetStack.estimatedRowHeight = 66
         
-        let collection = TwitterClient.sharedInstance.obtainTweets()
-        
-        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "onTimer", userInfo: nil, repeats: true)
+        TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
+            self.tweetCollection = result
+            self.tweetStack.reloadData()
+        }
     }
     
     
@@ -37,15 +40,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tweetStack: UITableView, numberOfRowsInSection section: Int) -> Int {
         println("COUNT")
-        /*
-        if let theList = self.businesses {
-            println(theList.count)
-            return theList.count
-        } else {
-            return 0
-        }
-*/
-        return 0
+        return tweetCollection.count
     }
     
     
@@ -53,8 +48,6 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(tweetStack: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        // let details = self.businesses[indexPath.row]
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
 /*        cell.NameBusiness.text = details.name
         cell.imageviewBusiness.setImageWithURL(details.imageURL)
