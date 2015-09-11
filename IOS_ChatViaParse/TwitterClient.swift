@@ -55,6 +55,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                 self.GET("1.1/account/verify_credentials.json", parameters: nil,
                     success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                         self.userAuthorized = User(dict: response as! NSDictionary)
+                        User.currentUser = self.userAuthorized
                         self.blockForLoginCompletion!(user: self.userAuthorized, error:nil)
                     },
                     failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
