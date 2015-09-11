@@ -19,27 +19,12 @@ class ViewController_Login: UIViewController {
     
 
     @IBAction func Action_SignIn(sender: AnyObject) {
-        println("Login")
-        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
-        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "cptwitterdemo://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential!) -> Void in
-            println("Good to go: we have a request token")
-            var authURL = NSURL(string:"https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")
-            UIApplication.sharedApplication().openURL(authURL!)
-            }) { (error: NSError!) -> Void in println("Not fun")}
-        /*
-        PFUser.logInWithUsernameInBackground(TextEntry_Username.text, password: TextEntry_Password.text) {
-            (userSuccess: PFUser?, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
-                println(errorString)
-            } else {
-                if userSuccess != nil {
-                    println("You are all set!")
-                    self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
-                }
+        
+        TwitterClient.sharedInstance.login { (user, error) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
             }
         }
-*/
     }
     
     

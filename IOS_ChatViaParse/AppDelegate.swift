@@ -45,21 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // TWITTER OAUTH: Returning to our application from the Safari-based twitter confirm-give-app-permissions page
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        let queryStr = url.query
-        TwitterClient.sharedInstance.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: queryStr),
-            success: { (accessToken: BDBOAuth1Credential!) -> Void in
-                println("Got our access token")
-                TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
-                TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil,
-                    success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                        let userConfirm = User(dict: response as! NSDictionary)
-                        println("Good verification") },
-                    failure: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in println("BAD verification") })
-            },
-            failure: { (error: NSError!) -> Void in
-                println("Failure")
-            }
-        )
+        TwitterClient.sharedInstance.openURL(url)
         return true
     }
 
