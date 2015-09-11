@@ -26,6 +26,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         tweetStack.rowHeight = UITableViewAutomaticDimension
         tweetStack.estimatedRowHeight = 66
         
+        let collection = TwitterClient.sharedInstance.obtainTweets()
+        
         NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "onTimer", userInfo: nil, repeats: true)
     }
     

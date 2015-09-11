@@ -44,6 +44,24 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     }
     
     
+    func obtainTweets() -> [Tweet] {
+        self.GET("1.1/statuses/home_timeline.json", parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                let foo = response as! NSArray
+                for fooin in foo {
+                    let xyz = fooin as! NSDictionary
+                    println(xyz["text"])
+                }
+                let bar = foo
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println(error)
+            }
+        )
+        return []
+    }
+    
+    
     func openURL(url: NSURL) -> Void {
         let queryStr = url.query
         fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: queryStr),
