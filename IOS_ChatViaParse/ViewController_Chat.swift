@@ -39,7 +39,6 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(tweetStack: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("COUNT")
         return tweetCollection.count
     }
     

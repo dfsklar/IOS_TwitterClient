@@ -25,11 +25,12 @@ class Tweet: NSObject {
     
     
     // Give me the array of tweets deserialized from an array of dictionaries
+    /*
     class func tweetsFromArray(array: [NSDictionary]) -> [Tweet] {
         var result : [Tweet] = []
         for dict in array {
             result.append(Tweet(dict: dict))
         }
         return result
-    }
+    } */
 }
