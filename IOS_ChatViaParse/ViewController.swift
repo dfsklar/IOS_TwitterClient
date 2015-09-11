@@ -7,17 +7,22 @@
 //
 
 import UIKit
-import Parse
+
+
+
 
 class ViewController_Login: UIViewController {
     @IBOutlet weak var TextEntry_Username: UITextField!
     @IBOutlet weak var TextEntry_Password: UITextField!
     
-    
-    
+
     
 
     @IBAction func Action_SignIn(sender: AnyObject) {
+        println("Login")
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "cptwitterdemo://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential!) -> Void in println("Good to go") }) { (error: NSError!) -> Void in println("Not fun")}
+        /*
         PFUser.logInWithUsernameInBackground(TextEntry_Username.text, password: TextEntry_Password.text) {
             (userSuccess: PFUser?, error: NSError?) -> Void in
             if let error = error {
@@ -30,10 +35,12 @@ class ViewController_Login: UIViewController {
                 }
             }
         }
+*/
     }
     
     
     @IBAction func Action_SignUp(sender: AnyObject) {
+        /*
         var user = PFUser()
         user.username = TextEntry_Username.text
         user.password = TextEntry_Password.text
@@ -50,6 +57,7 @@ class ViewController_Login: UIViewController {
                 println("You are all set!")
             }
         }
+*/
     }
     
     
@@ -58,11 +66,13 @@ class ViewController_Login: UIViewController {
     
     override func viewDidAppear(animated:Bool) {
         super.viewDidAppear(animated)
-        var currentUser = PFUser.currentUser()
+        /*
+        var currentUser = nil // PFUser.currentUser()
         if currentUser != nil {
             println("Yes we have a current user")
             self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
         }
+*/
     }
     
     
