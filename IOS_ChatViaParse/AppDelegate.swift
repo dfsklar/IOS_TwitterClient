@@ -51,7 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 println("Got our access token")
                 TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
                 TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil,
-                    success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in println("Good verification") },
+                    success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                        let userConfirm = User(dict: response as! NSDictionary)
+                        println("Good verification") },
                     failure: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in println("BAD verification") })
             },
             failure: { (error: NSError!) -> Void in
