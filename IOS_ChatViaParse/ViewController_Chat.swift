@@ -48,12 +48,12 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tweetStack: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
-/*        cell.NameBusiness.text = details.name
-        cell.imageviewBusiness.setImageWithURL(details.imageURL)
-        cell.imageviewRating.setImageWithURL(details.ratingImageURL)
-        cell.labelDistanceAddress.text = details.address!
-        cell.labelDistance.text = details.distance!
- */       return cell
+        
+        let theTweet = tweetCollection[indexPath.row]
+            cell.text_tweetBody.text = theTweet.text
+            cell.label_idOfTweeter.text = theTweet.user!.name
+        
+        return cell
     }
     
     

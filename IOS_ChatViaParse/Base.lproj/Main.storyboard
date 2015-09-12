@@ -105,15 +105,27 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="retweet" translatesAutoresizingMaskIntoConstraints="NO" id="ago-li-uiH">
-                                                    <rect key="frame" x="57" y="90" width="26" height="23"/>
-                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUt-uk-urz">
+                                                    <rect key="frame" x="57" y="91" width="19" height="22"/>
+                                                    <state key="normal" image="retweet">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="button_retweet:" destination="fMR-Uf-Zup" eventType="touchUpInside" id="tWu-l8-WGD"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9UH-wH-88E" firstAttribute="top" secondItem="zEY-T0-uVy" secondAttribute="top" constant="4" id="1Wa-2y-6kY"/>
                                                 <constraint firstItem="9UH-wH-88E" firstAttribute="leading" secondItem="zEY-T0-uVy" secondAttribute="leading" constant="4" id="mSL-i5-6L6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="image_profile" destination="9UH-wH-88E" id="Vma-Mc-akc"/>
+                                            <outlet property="label_dateOfTweet" destination="cTX-mP-zSu" id="yxl-dP-4Nm"/>
+                                            <outlet property="label_idOfTweeter" destination="8Oc-gx-eSN" id="5sT-gj-qgz"/>
+                                            <outlet property="text_tweetBody" destination="zWn-dM-kFC" id="OJo-Sv-MyM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
