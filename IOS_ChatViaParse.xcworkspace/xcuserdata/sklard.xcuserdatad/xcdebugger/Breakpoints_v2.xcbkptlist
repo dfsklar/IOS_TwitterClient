@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS_ChatViaParse/ViewController_Compose.swift"
-            timestampString = "463947501.966435"
+            timestampString = "463953093.962274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "handleButton_Send(_:)"
             landmarkType = "5">
             <Locations>

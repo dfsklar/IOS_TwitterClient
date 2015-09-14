@@ -38,7 +38,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     @IBAction func Logout(sender: AnyObject) {
-       // TwitterClient.sharedInstance.logout()
+        User.currentUser!.logout()
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     func loadOrReloadTweets() {

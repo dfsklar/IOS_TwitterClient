@@ -25,6 +25,7 @@ class ViewController_Compose: UIViewController {
                 label_Name.text = user.name
             }
         }
+        self.textview_MessageBody.becomeFirstResponder()
     }
     
  
@@ -39,6 +40,7 @@ class ViewController_Compose: UIViewController {
             }
         }
     }
+    
     
     @IBAction func handleButton_Cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
