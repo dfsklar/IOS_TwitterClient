@@ -7,33 +7,29 @@
 //
 
 import UIKit
-import Parse
+
+
+
 
 class ViewController_Login: UIViewController {
     @IBOutlet weak var TextEntry_Username: UITextField!
     @IBOutlet weak var TextEntry_Password: UITextField!
     
-    
-    
+
     
 
     @IBAction func Action_SignIn(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(TextEntry_Username.text, password: TextEntry_Password.text) {
-            (userSuccess: PFUser?, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
-                println(errorString)
-            } else {
-                if userSuccess != nil {
-                    println("You are all set!")
-                    self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
-                }
+        
+        TwitterClient.sharedInstance.login { (user, error) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
             }
         }
     }
     
     
     @IBAction func Action_SignUp(sender: AnyObject) {
+        /*
         var user = PFUser()
         user.username = TextEntry_Username.text
         user.password = TextEntry_Password.text
@@ -50,17 +46,25 @@ class ViewController_Login: UIViewController {
                 println("You are all set!")
             }
         }
+*/
     }
     
     
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    override func viewDidAppear(animated:Bool) {
+        super.viewDidAppear(animated)
+        /*
+        var currentUser = nil // PFUser.currentUser()
+        if currentUser != nil {
+            println("Yes we have a current user")
+            self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
+        }
+*/
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -180,7 +180,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnf-zF-wcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2653.5" y="336.5"/>
+            <point key="canvasLocation" x="2484.5" y="336.5"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="gvb-tL-07y">
+            <objects>
+                <viewController storyboardIdentifier="VC_Compose" id="fNf-fA-bUN" customClass="ViewController_Compose" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KQS-AI-gWp"/>
+                        <viewControllerLayoutGuide type="bottom" id="xIj-bQ-PAh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M1Q-PP-a5b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RYX-gs-1t9">
+                                <rect key="frame" x="12" y="12" width="58" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="W73-Hh-tab"/>
+                                    <constraint firstAttribute="height" constant="58" id="YLy-m0-fW3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWB-MA-R8R">
+                                <rect key="frame" x="86" y="12" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV2-W2-cqC">
+                                <rect key="frame" x="86" y="41" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZO-dI-t9J">
+                                <rect key="frame" x="12" y="89" width="572" height="258"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RYX-gs-1t9" firstAttribute="leading" secondItem="M1Q-PP-a5b" secondAttribute="leading" constant="12" id="JR1-Eq-xTX"/>
+                            <constraint firstItem="RYX-gs-1t9" firstAttribute="top" secondItem="M1Q-PP-a5b" secondAttribute="top" constant="12" id="XwY-dy-vDu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Compose" id="oYD-hg-MW6">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="G2h-gB-daa"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DlM-eE-1oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3816" y="336"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ziK-px-zUV">
@@ -193,7 +246,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9Zp-Ab-yVC" kind="relationship" relationship="rootViewController" id="5y1-O3-BqA"/>
+                        <segue destination="7jA-lT-qZH" kind="relationship" relationship="rootViewController" id="rvH-Nz-OOg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u98-Su-Gqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,12 +265,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7jA-lT-qZH" kind="relationship" relationship="rootViewController" id="GXs-kS-gxl"/>
+                        <segue destination="7jA-lT-qZH" kind="relationship" relationship="rootViewController" id="gns-ax-yjQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pV3-2M-uTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066.5" y="336.5"/>
+            <point key="canvasLocation" x="1993.5" y="336.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ii9-pX-D8E">
@@ -237,10 +290,31 @@
             </objects>
             <point key="canvasLocation" x="244" y="336"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UC1-O2-zVH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WTj-Pf-zJ8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WdC-du-Zka">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fNf-fA-bUN" kind="relationship" relationship="rootViewController" id="cSR-3C-z4o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xfj-P3-l89" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3004" y="336"/>
+        </scene>
     </scenes>
     <resources>
         <image name="favorite" width="16" height="16"/>
         <image name="reply" width="16" height="16"/>
         <image name="retweet" width="19" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rvH-Nz-OOg"/>
+    </inferredMetricsTieBreakers>
 </document>

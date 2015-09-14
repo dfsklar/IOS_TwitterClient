@@ -23,8 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Do we already have a logged-in user?
         if User.currentUser != nil {
             // The user is allowed to skip the login!
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TweetstreamVC") as! UIViewController
-            window?.rootViewController = vc
+	    // THIS IS DOING THIS IN A WAY THAT KILLS NAVIGATION!!!  This is wrong!
+            // let vc = storyboard.instantiateViewControllerWithIdentifier("TweetstreamVC") as! UIViewController
+            // window?.rootViewController = vc
+//	    window?.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
         }
         return true
     }

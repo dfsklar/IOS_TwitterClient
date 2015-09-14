@@ -19,7 +19,6 @@ class ViewController_Login: UIViewController {
     
 
     @IBAction func Action_SignIn(sender: AnyObject) {
-        
         TwitterClient.sharedInstance.login { (user, error) -> Void in
             if user != nil {
                 self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
@@ -29,24 +28,6 @@ class ViewController_Login: UIViewController {
     
     
     @IBAction func Action_SignUp(sender: AnyObject) {
-        /*
-        var user = PFUser()
-        user.username = TextEntry_Username.text
-        user.password = TextEntry_Password.text
-        user.email = user.username
-        // other fields can be set just like with PFObject
-        // user["phone"] = "415-392-0202"
-        
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
-                println(errorString)
-            } else {
-                println("You are all set!")
-            }
-        }
-*/
     }
     
     
@@ -55,13 +36,9 @@ class ViewController_Login: UIViewController {
     
     override func viewDidAppear(animated:Bool) {
         super.viewDidAppear(animated)
-        /*
-        var currentUser = nil // PFUser.currentUser()
-        if currentUser != nil {
-            println("Yes we have a current user")
-            self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
+	if (User.currentUser != nil) {
+	    self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
         }
-*/
     }
     
     
