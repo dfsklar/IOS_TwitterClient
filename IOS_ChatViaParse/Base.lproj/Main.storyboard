@@ -409,24 +409,39 @@
                                 <state key="normal" image="retweet">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button_Retweet:" destination="qwD-bt-auL" eventType="touchUpInside" id="VQk-h6-iFR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1D-AI-fn4" userLabel="Buttons">
                                 <rect key="frame" x="54" y="354" width="16" height="22"/>
                                 <state key="normal" image="reply">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button_Reply:" destination="qwD-bt-auL" eventType="touchUpInside" id="CAE-Ji-Mcw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adn-VW-8fx">
                                 <rect key="frame" x="88" y="354" width="16" height="22"/>
                                 <state key="normal" image="favorite">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button_Fave:" destination="qwD-bt-auL" eventType="touchUpInside" id="RlP-my-WSz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Js-uR-80W"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageview_Profile" destination="tiK-A6-GOg" id="3DU-PB-4LW"/>
+                        <outlet property="label_Handle" destination="GzV-Nv-CnU" id="9Lp-6A-4mi"/>
+                        <outlet property="label_Name" destination="TYX-8m-itc" id="kpo-EN-aA1"/>
+                        <outlet property="textview_Body" destination="3Di-zb-AiY" id="uTC-Fs-05x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIg-xS-5FX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

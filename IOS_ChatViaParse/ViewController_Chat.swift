@@ -82,17 +82,15 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*
         if let cell = sender as? UITableViewCell {
-            let indexPathSelectedCell = catalogTable.indexPathForCell(cell)!
-            if let detailsDict = movieList[indexPathSelectedCell.row] as? NSDictionary {
-                let destinationViewC = segue.destinationViewController as! DetailsViewController
+            let indexPathSelectedCell = tweetStack.indexPathForCell(cell)!
+            if let detailsDict = tweetCollection[indexPathSelectedCell.row] as? Tweet {
+                let destinationViewC = segue.destinationViewController as! ViewController_TweetDetail
                 destinationViewC.details = detailsDict
                 // Deselect the cell that was touched so upon return we have a clean slate
-                catalogTable.deselectRowAtIndexPath(indexPathSelectedCell, animated:false)
+                tweetStack.deselectRowAtIndexPath(indexPathSelectedCell, animated:false)
             }
         }
-*/
     }
     
     
