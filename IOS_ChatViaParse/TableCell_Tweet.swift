@@ -23,9 +23,4 @@ class TableCell_Tweet: UITableViewCell {
         
     }
     
-    
-
-    // The UITextView showing name and handle is a bitch, try this:
-    // *instanceOfUITextView*.contentInset = UIEdgeInsetsMake(-4,-8,0,0);
-    
 }
