@@ -26,7 +26,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         tweetStack.delegate = self
         
         tweetStack.rowHeight = UITableViewAutomaticDimension
-        tweetStack.estimatedRowHeight = 66
+        tweetStack.estimatedRowHeight = 200
         
         TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
             self.tweetCollection = result
@@ -50,8 +50,10 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
         
         let theTweet = tweetCollection[indexPath.row]
-            cell.text_tweetBody.text = theTweet.text
-            cell.label_idOfTweeter.text = theTweet.user!.name
+        cell.text_tweetBody.text = theTweet.text
+        cell.label_idOfTweeter.text = theTweet.user!.name
+        
+        cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-4,-8,0,0);
         
         return cell
     }
