@@ -18,10 +18,15 @@ class TableCell_Tweet: UITableViewCell {
     @IBOutlet weak var text_tweetBody: UITextView!
     
     
+    @IBAction func handleRetwe(sender: AnyObject) {
+        let x = "y"
+    }
     
-    @IBAction func button_retweet(sender: AnyObject) {
-        let foo = "bar"
-        //self.
+    
+    @IBAction func button_reply(sender: AnyObject) {
+    }
+    
+    @IBAction func button_fave(sender: AnyObject) {
     }
     
 }
