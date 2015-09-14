@@ -21,6 +21,7 @@
 		68D06AEA1BA0E6B0001B6FFC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D06AE81BA0E6B0001B6FFC /* LaunchScreen.xib */; };
 		68D06AF61BA0E6B0001B6FFC /* IOS_ChatViaParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D06AF51BA0E6B0001B6FFC /* IOS_ChatViaParseTests.swift */; };
 		68EEC75D1BA74B0E00A756E9 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEC75C1BA74B0E00A756E9 /* SwiftLoader.swift */; };
+		68EEC75F1BA7693E00A756E9 /* ViewController_TweetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEC75E1BA7693E00A756E9 /* ViewController_TweetDetail.swift */; };
 		EE24F89BF9F7293B324B1FF5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E321BD72B02533A6683113 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		68D06AF41BA0E6B0001B6FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D06AF51BA0E6B0001B6FFC /* IOS_ChatViaParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_ChatViaParseTests.swift; sourceTree = "<group>"; };
 		68EEC75C1BA74B0E00A756E9 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
+		68EEC75E1BA7693E00A756E9 /* ViewController_TweetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TweetDetail.swift; sourceTree = "<group>"; };
 		6DB815A2069E8D03D9A0E0DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4E321BD72B02533A6683113 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 		68D06AD11BA0E6AF001B6FFC = {
 			isa = PBXGroup;
 			children = (
+				68EEC75E1BA7693E00A756E9 /* ViewController_TweetDetail.swift */,
 				68D06ADC1BA0E6AF001B6FFC /* IOS_ChatViaParse */,
 				68D06AF21BA0E6B0001B6FFC /* IOS_ChatViaParseTests */,
 				68D06ADB1BA0E6AF001B6FFC /* Products */,
@@ -315,6 +318,7 @@
 			files = (
 				686570E11BA283C90040478D /* TableCell_Tweet.swift in Sources */,
 				687802F11BA72C9500A80886 /* ViewController_Compose.swift in Sources */,
+				68EEC75F1BA7693E00A756E9 /* ViewController_TweetDetail.swift in Sources */,
 				687C84091BA24B870094D1E5 /* TwitterClient.swift in Sources */,
 				682BC0B51BA0F02300A9533F /* ViewController_Chat.swift in Sources */,
 				686570DD1BA263BA0040478D /* User.swift in Sources */,

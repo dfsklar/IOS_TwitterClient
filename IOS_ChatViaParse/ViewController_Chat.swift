@@ -21,6 +21,12 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     var tweetCollection : [Tweet] = []
     
     
+    @IBAction func handleIntraCellButton_Retweet(sender: AnyObject) {
+        let x = "y"
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +81,22 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*
+        if let cell = sender as? UITableViewCell {
+            let indexPathSelectedCell = catalogTable.indexPathForCell(cell)!
+            if let detailsDict = movieList[indexPathSelectedCell.row] as? NSDictionary {
+                let destinationViewC = segue.destinationViewController as! DetailsViewController
+                destinationViewC.details = detailsDict
+                // Deselect the cell that was touched so upon return we have a clean slate
+                catalogTable.deselectRowAtIndexPath(indexPathSelectedCell, animated:false)
+            }
+        }
+*/
+    }
     
+    
+    // CELL FOR ROW
     func tableView(tweetStack: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
         
