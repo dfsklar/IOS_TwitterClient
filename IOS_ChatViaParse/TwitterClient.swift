@@ -61,6 +61,24 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         )
     }
     
+
+    
+    
+    func sendTweet(message: String, completionBlock: (error: NSError?) -> Void) {
+        
+        let params: NSDictionary = ["status": message]
+        
+        self.POST("1.1/statuses/update", parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                completionBlock(error: nil)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                completionBlock(error: error)
+            }
+        )
+    }
+
+    
     
     func openURL(url: NSURL) -> Void {
         let queryStr = url.query

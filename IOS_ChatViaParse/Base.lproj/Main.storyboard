@@ -238,18 +238,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Compose" id="oYD-hg-MW6">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="G2h-gB-daa"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="aAg-4Y-USH">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KMQ-id-em5">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="pba-Tv-dO7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2U5-yY-mrD">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleButton_Cancel:" destination="fNf-fA-bUN" eventType="touchUpInside" id="7LH-x7-uPQ"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="handleButton_Cancel:" destination="fNf-fA-bUN" id="Yxs-os-vo0"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jxu-ug-87D">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BOY-1e-Ifc">
@@ -258,10 +257,10 @@
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleButton_Send:" destination="fNf-fA-bUN" eventType="touchUpInside" id="fsT-YC-FbL"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="handleButton_Send:" destination="fNf-fA-bUN" id="f0W-v4-YI3"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

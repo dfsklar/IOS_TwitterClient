@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IOS_ChatViaParse/TwitterClient.swift"
-            timestampString = "463631392.873813"
+            filePath = "IOS_ChatViaParse/User.swift"
+            timestampString = "463937417.221984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "openURL(_:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init(dict:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,109 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IOS_ChatViaParse/User.swift"
-            timestampString = "463937417.221984"
+            filePath = "IOS_ChatViaParse/ViewController_Compose.swift"
+            timestampString = "463947501.966435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "init(dict:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "handleButton_Send(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_ChatViaParse.ViewController_Compose.handleButton_Send (IOS_ChatViaParse.ViewController_Compose)(Swift.AnyObject) -&gt; ()"
+                  moduleName = "IOS_ChatViaParse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sklard/Documents/personal/IOS_TwitterClient/IOS_ChatViaParse/ViewController_Compose.swift"
+                  timestampString = "463947501.97073"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_ChatViaParse.ViewController_Compose.(handleButton_Send (IOS_ChatViaParse.ViewController_Compose) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "IOS_ChatViaParse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sklard/Documents/personal/IOS_TwitterClient/IOS_ChatViaParse/ViewController_Compose.swift"
+                  timestampString = "463947501.970899"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_ChatViaParse/TwitterClient.swift"
+            timestampString = "463947609.11202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "sendTweet(_:completionBlock:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_ChatViaParse/TwitterClient.swift"
+            timestampString = "463947820.335276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "sendTweet(_:completionBlock:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_ChatViaParse/TwitterClient.swift"
+            timestampString = "463947821.487022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "sendTweet(_:completionBlock:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_ChatViaParse/TwitterClient.swift"
+            timestampString = "463947823.543012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "sendTweet(_:completionBlock:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

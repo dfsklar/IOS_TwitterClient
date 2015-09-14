@@ -28,14 +28,24 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         tweetStack.rowHeight = UITableViewAutomaticDimension
         tweetStack.estimatedRowHeight = 200
         
-        TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
-            self.tweetCollection = result
-            self.tweetStack.reloadData()
-        }
+        var swfcfg : SwiftLoader.Config = SwiftLoader.Config()
+        swfcfg.backgroundColor = UIColor.blueColor()
+        swfcfg.spinnerColor = UIColor.whiteColor()
+        SwiftLoader.setConfig(swfcfg)
+    
+        loadOrReloadTweets()
     }
     
     
-    
+
+    func loadOrReloadTweets() {
+        SwiftLoader.show(animated: false)
+        TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
+            self.tweetCollection = result
+            self.tweetStack.reloadData()
+            SwiftLoader.hide()
+        }
+    }
     
     
     func tableView(tweetStack: UITableView, numberOfRowsInSection section: Int) -> Int {

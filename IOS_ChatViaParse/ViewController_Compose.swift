@@ -27,14 +27,21 @@ class ViewController_Compose: UIViewController {
         }
     }
     
+ 
     
     @IBAction func handleButton_Send(sender: AnyObject) {
-        
+        TwitterClient.sharedInstance.sendTweet(textview_MessageBody.text) { (error) -> Void in
+            if error == nil {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                println("Whoa we got an error trying to tweet")
+            }
+        }
     }
-    
     
     @IBAction func handleButton_Cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+
 
 }

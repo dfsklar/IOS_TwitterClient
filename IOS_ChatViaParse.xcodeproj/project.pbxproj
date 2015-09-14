@@ -20,6 +20,7 @@
 		68D06AE71BA0E6AF001B6FFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D06AE61BA0E6AF001B6FFC /* Images.xcassets */; };
 		68D06AEA1BA0E6B0001B6FFC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D06AE81BA0E6B0001B6FFC /* LaunchScreen.xib */; };
 		68D06AF61BA0E6B0001B6FFC /* IOS_ChatViaParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D06AF51BA0E6B0001B6FFC /* IOS_ChatViaParseTests.swift */; };
+		68EEC75D1BA74B0E00A756E9 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEC75C1BA74B0E00A756E9 /* SwiftLoader.swift */; };
 		EE24F89BF9F7293B324B1FF5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E321BD72B02533A6683113 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		68D06AEF1BA0E6B0001B6FFC /* IOS_ChatViaParseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOS_ChatViaParseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D06AF41BA0E6B0001B6FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D06AF51BA0E6B0001B6FFC /* IOS_ChatViaParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_ChatViaParseTests.swift; sourceTree = "<group>"; };
+		68EEC75C1BA74B0E00A756E9 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
 		6DB815A2069E8D03D9A0E0DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4E321BD72B02533A6683113 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 				687C84041BA24AB80094D1E5 /* IOS_ChatViaParse-Bridging-Header.h */,
 				686570E01BA283C90040478D /* TableCell_Tweet.swift */,
 				687802F01BA72C9500A80886 /* ViewController_Compose.swift */,
+				68EEC75C1BA74B0E00A756E9 /* SwiftLoader.swift */,
 			);
 			path = IOS_ChatViaParse;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				686570DF1BA264AE0040478D /* Tweet.swift in Sources */,
 				68D06AE21BA0E6AF001B6FFC /* ViewController.swift in Sources */,
 				68D06AE01BA0E6AF001B6FFC /* AppDelegate.swift in Sources */,
+				68EEC75D1BA74B0E00A756E9 /* SwiftLoader.swift in Sources */,
 				687C84061BA24AB90094D1E5 /* bridging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
