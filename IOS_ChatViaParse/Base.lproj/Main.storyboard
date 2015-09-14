@@ -96,7 +96,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Body of the tweet" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Body of the tweet" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
                                                     <rect key="frame" x="57" y="30" width="310" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>

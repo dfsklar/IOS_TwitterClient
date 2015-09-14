@@ -56,6 +56,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-4,-8,0,0);
         cell.text_tweetBody.contentInset = UIEdgeInsetsMake(-4,-8,0,0);
         
+        cell.image_profile.setImageWithURL(theTweet.user!.profileImage)
+        
         return cell
     }
     
