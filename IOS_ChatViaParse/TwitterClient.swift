@@ -68,7 +68,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         
         let params: NSDictionary = ["status": message]
         
-        self.POST("1.1/statuses/update", parameters: params,
+        self.POST("1.1/statuses/update.json", parameters: params,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 completionBlock(error: nil)
             },

@@ -37,6 +37,9 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
+    @IBAction func Logout(sender: AnyObject) {
+       // TwitterClient.sharedInstance.logout()
+    }
 
     func loadOrReloadTweets() {
         SwiftLoader.show(animated: false)
@@ -64,8 +67,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         cell.text_tweetBody.text = theTweet.text
         cell.label_idOfTweeter.text = theTweet.user!.name
         
-        cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-4,-8,0,0);
-        cell.text_tweetBody.contentInset = UIEdgeInsetsMake(-4,-8,0,0);
+        cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
+        cell.text_tweetBody.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         
         cell.image_profile.setImageWithURL(theTweet.user!.profileImage)
         

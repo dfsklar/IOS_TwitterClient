@@ -35,6 +35,7 @@ class ViewController_Compose: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 println("Whoa we got an error trying to tweet")
+                println(error?.description)
             }
         }
     }
