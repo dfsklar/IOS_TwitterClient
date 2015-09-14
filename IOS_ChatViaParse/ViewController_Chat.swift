@@ -12,6 +12,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tweetStack: UITableView!
     
+        var refreshControl: UIRefreshControl!
+    
 
     func onTimer() {
     }
@@ -32,7 +34,13 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         swfcfg.backgroundColor = UIColor.blueColor()
         swfcfg.spinnerColor = UIColor.whiteColor()
         SwiftLoader.setConfig(swfcfg)
+        
+        // Set up "refresh list via swipe gesture" behavior
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:"onRefresh", forControlEvents:UIControlEvents.ValueChanged)
+        tweetStack.insertSubview(refreshControl, atIndex: 0)
     
+        SwiftLoader.show(animated: false)
         loadOrReloadTweets()
     }
     
@@ -41,13 +49,20 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         User.currentUser!.logout()
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    func onRefresh() {
+        loadOrReloadTweets()
+    }
+    
 
     func loadOrReloadTweets() {
-        SwiftLoader.show(animated: false)
+
         TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
             self.tweetCollection = result
             self.tweetStack.reloadData()
             SwiftLoader.hide()
+            self.refreshControl.endRefreshing()
         }
     }
     
