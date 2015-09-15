@@ -80,9 +80,65 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
 
     
     
+    
+    func reTweet(idStr: String, completionBlock: (error: NSError?) -> Void) {
+        
+        let params: NSDictionary = ["id": idStr]
+        
+        self.POST("1.1/statuses/retweet/" + idStr + ".json", parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                completionBlock(error: nil)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                completionBlock(error: error)
+            }
+        )
+    }
+    
+    
+    
+    func favorThisTweet(idStr: String, completionBlock: (error: NSError?) -> Void) {
+        
+        let params: NSDictionary = ["id": idStr]
+        
+        self.POST("1.1/favorites/create.json", parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                completionBlock(error: nil)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                completionBlock(error: error)
+            }
+        )
+    }
+    
+    
+    
+    
+    
+    
+    
     func sendTweet(message: String, completionBlock: (error: NSError?) -> Void) {
         
         let params: NSDictionary = ["status": message]
+        
+        self.POST("1.1/statuses/update.json", parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                completionBlock(error: nil)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                completionBlock(error: error)
+            }
+        )
+    }
+    
+    
+    
+    func sendReplyTweet(message: String, originalTweet: Tweet, completionBlock: (error: NSError?) -> Void) {
+        
+        let params: NSDictionary = [
+            "status": message,
+            "in_reply_to_status_id": originalTweet.idStr!
+        ]
         
         self.POST("1.1/statuses/update.json", parameters: params,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
