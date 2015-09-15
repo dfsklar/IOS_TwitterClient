@@ -21,10 +21,24 @@ class ViewController_TweetDetail: UIViewController {
     @IBOutlet weak var textview_Body: UITextView!
     
     @IBAction func button_Retweet(sender: AnyObject) {
+        TwitterClient.sharedInstance.reTweet(details.idStr!, completionBlock: { (error) -> Void in
+NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_close", object: nil)
+            if (error != nil) {
+                println(error)
+            }
+        })
     }
+
     @IBAction func button_Reply(sender: AnyObject) {
     }
+
     @IBAction func button_Fave(sender: AnyObject) {
+        TwitterClient.sharedInstance.favorThisTweet(details.idStr!, completionBlock:  { (error) -> Void in
+NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_close", object: nil)
+            if (error != nil) {
+                println(error)
+            }
+        })
     }
     
     override func viewDidLoad() {
@@ -38,7 +52,13 @@ class ViewController_TweetDetail: UIViewController {
         label_Handle.text = theTweet.user!.handle
         
         imageview_Profile.setImageWithURL(theTweet.user!.profileImage)
-        
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "RequestToDetailView_close", name: "RequestToDetailView_close", object: nil)
     }
-    
+
+
+    func RequestToDetailView_close() {
+        dismissViewControllerAnimated(true, completion: nil)
+        println("HELLO i should close")    	 
+    }
 }

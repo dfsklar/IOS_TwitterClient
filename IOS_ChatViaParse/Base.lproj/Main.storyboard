@@ -103,7 +103,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/14/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-mP-zSu">
-                                                    <rect key="frame" x="326" y="9" width="40" height="13.5"/>
+                                                    <rect key="frame" x="326" y="9" width="40" height="14"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                                     </accessibility>
@@ -379,20 +379,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tiK-A6-GOg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tiK-A6-GOg">
                                 <rect key="frame" x="16" y="79" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="Zjp-s2-vZ2"/>
                                     <constraint firstAttribute="height" constant="45" id="okD-xb-jFc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label_Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYX-8m-itc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label_Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYX-8m-itc">
                                 <rect key="frame" x="75" y="79" width="86" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label_Handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-Nv-CnU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label_Handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-Nv-CnU">
                                 <rect key="frame" x="75" y="101" width="94" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,7 +420,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1D-AI-fn4" userLabel="Buttons">
-                                <rect key="frame" x="54" y="354" width="16" height="22"/>
+                                <rect key="frame" x="82" y="354" width="16" height="22"/>
                                 <state key="normal" image="reply">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -429,7 +429,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adn-VW-8fx">
-                                <rect key="frame" x="88" y="354" width="16" height="22"/>
+                                <rect key="frame" x="142" y="354" width="16" height="22"/>
                                 <state key="normal" image="favorite">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -439,6 +439,13 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GzV-Nv-CnU" firstAttribute="leading" secondItem="TYX-8m-itc" secondAttribute="leading" id="Gkr-TK-yDf"/>
+                            <constraint firstItem="TYX-8m-itc" firstAttribute="leading" secondItem="tiK-A6-GOg" secondAttribute="trailing" constant="5" id="J1a-bx-kuQ"/>
+                            <constraint firstItem="tiK-A6-GOg" firstAttribute="leading" secondItem="ei1-ja-q3F" secondAttribute="leading" constant="10" id="Ng9-i0-xLw"/>
+                            <constraint firstItem="tiK-A6-GOg" firstAttribute="top" secondItem="tgj-yU-RbU" secondAttribute="bottom" constant="13" id="YRZ-Yv-Akk"/>
+                            <constraint firstItem="tiK-A6-GOg" firstAttribute="top" secondItem="TYX-8m-itc" secondAttribute="top" id="ln6-4x-ivD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Js-uR-80W"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -482,6 +489,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gns-ax-yjQ"/>
-        <segue reference="yl4-bm-X75"/>
+        <segue reference="bue-N3-mKI"/>
     </inferredMetricsTieBreakers>
 </document>
