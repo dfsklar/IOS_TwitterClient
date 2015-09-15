@@ -12,9 +12,9 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tweetStack: UITableView!
     
-        var refreshControl: UIRefreshControl!
+    var refreshControl: UIRefreshControl!
     
-
+    
     func onTimer() {
     }
     
@@ -45,7 +45,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:"onRefresh", forControlEvents:UIControlEvents.ValueChanged)
         tweetStack.insertSubview(refreshControl, atIndex: 0)
-    
+        
         SwiftLoader.show(animated: false)
         loadOrReloadTweets()
     }
@@ -61,9 +61,9 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         loadOrReloadTweets()
     }
     
-
+    
     func loadOrReloadTweets() {
-
+        
         TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
             self.tweetCollection = result
             self.tweetStack.reloadData()
