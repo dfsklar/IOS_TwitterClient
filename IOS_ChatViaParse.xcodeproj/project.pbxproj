@@ -56,7 +56,7 @@
 		68D06AF41BA0E6B0001B6FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D06AF51BA0E6B0001B6FFC /* IOS_ChatViaParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_ChatViaParseTests.swift; sourceTree = "<group>"; };
 		68EEC75C1BA74B0E00A756E9 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
-		68EEC75E1BA7693E00A756E9 /* ViewController_TweetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController_TweetDetail.swift; path = ../ViewController_TweetDetail.swift; sourceTree = "<group>"; };
+		68EEC75E1BA7693E00A756E9 /* ViewController_TweetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController_TweetDetail.swift; path = ViewController_TweetDetail.swift; sourceTree = "<group>"; };
 		6DB815A2069E8D03D9A0E0DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4E321BD72B02533A6683113 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,10 +120,10 @@
 		68D06ADC1BA0E6AF001B6FFC /* IOS_ChatViaParse */ = {
 			isa = PBXGroup;
 			children = (
-				68EEC75E1BA7693E00A756E9 /* ViewController_TweetDetail.swift */,
 				686570DB1BA263A00040478D /* Models */,
 				687C84071BA24B440094D1E5 /* API */,
 				68D06ADF1BA0E6AF001B6FFC /* AppDelegate.swift */,
+				68EEC75E1BA7693E00A756E9 /* ViewController_TweetDetail.swift */,
 				68D06AE11BA0E6AF001B6FFC /* ViewController.swift */,
 				682BC0B41BA0F02300A9533F /* ViewController_Chat.swift */,
 				68D06AE31BA0E6AF001B6FFC /* Main.storyboard */,
