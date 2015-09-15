@@ -107,6 +107,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         
         cell.image_profile.setImageWithURL(theTweet.user!.profileImage)
         
+        cell.label_dateOfTweet.text = theTweet.creationTime?.shortTimeAgoSinceNow()
+        
         return cell
     }
     
