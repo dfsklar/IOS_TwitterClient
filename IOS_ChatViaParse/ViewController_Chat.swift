@@ -81,16 +81,25 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     
+    // There are two segues that come out of this ViewController.
+    // So this prepare has to bifurcate immediately based on the target/destination VC.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let cell = sender as? UITableViewCell {
-            let indexPathSelectedCell = tweetStack.indexPathForCell(cell)!
-            if let detailsDict = tweetCollection[indexPathSelectedCell.row] as? Tweet {
+        
+        if let destinationViewC = segue.destinationViewController as? ViewController_TweetDetail {
+            if let cell = sender as? UITableViewCell {
+                let indexPathSelectedCell = tweetStack.indexPathForCell(cell)!
+                let detailsDict = tweetCollection[indexPathSelectedCell.row]
                 let destinationViewC = segue.destinationViewController as! ViewController_TweetDetail
                 destinationViewC.details = detailsDict
                 // Deselect the cell that was touched so upon return we have a clean slate
                 tweetStack.deselectRowAtIndexPath(indexPathSelectedCell, animated:false)
             }
         }
+
+        if let destinationViewC2 = segue.destinationViewController as? ViewController_Compose {
+            destinationViewC2.originalTweet = self.originalTweet
+        }
+
     }
     
     
@@ -127,7 +136,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     func showReplyUI(tweet: Tweet) {
         originalTweet = tweet
-        performSegueWithIdentifier("VC_Compose", sender: self)
+        performSegueWithIdentifier("VC_ComposeReply", sender: self)
     }
     
     

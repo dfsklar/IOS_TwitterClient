@@ -13,9 +13,12 @@ class ViewController_Compose: UIViewController {
     @IBOutlet weak var textview_MessageBody: UITextView!
 
     @IBOutlet weak var image_ProfileOfComposer: UIImageView!
+
     @IBOutlet weak var label_Handle: UILabel!
     @IBOutlet weak var label_Name: UILabel!
-    
+
+    // If this compose is a reply
+    var originalTweet : Tweet?
     
     override func viewWillAppear(animated:Bool) {
         if let user = User.currentUser {
