@@ -94,6 +94,17 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
+    func nonzeroIntToString (i : Int?) -> String {
+        var retval = ""
+        if let i = i {
+            if (i > 0) {
+                retval = String(i)
+            }
+        }
+        return retval
+    }
+    
+    
     // CELL FOR ROW
     func tableView(tweetStack: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
@@ -108,6 +119,9 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         cell.image_profile.setImageWithURL(theTweet.user!.profileImage)
         
         cell.label_dateOfTweet.text = theTweet.creationTime?.shortTimeAgoSinceNow()
+        
+        cell.label_countFave.text = nonzeroIntToString(theTweet.favoriteCount)
+        cell.label_countRetweet.text = nonzeroIntToString(theTweet.retweetCount)
         
         return cell
     }

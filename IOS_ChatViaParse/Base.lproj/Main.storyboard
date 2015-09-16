@@ -141,8 +141,8 @@
                                                         <action selector="handleRetwe:" destination="fMR-Uf-Zup" eventType="touchUpInside" id="TaM-cg-6ar"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea5-dj-nZ0" userLabel="Count_Retweet">
-                                                    <rect key="frame" x="127" y="118" width="42" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea5-dj-nZ0" userLabel="Count_Retweet">
+                                                    <rect key="frame" x="127" y="117" width="42" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="Noh-Cf-OIO"/>
                                                     </constraints>
@@ -150,7 +150,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMM-1s-Jur" userLabel="Count_Retweet">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMM-1s-Jur" userLabel="Count_Fave">
                                                     <rect key="frame" x="210" y="117" width="42" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="kf6-r5-yJl"/>
@@ -187,6 +187,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="image_profile" destination="9UH-wH-88E" id="Vma-Mc-akc"/>
+                                            <outlet property="label_countFave" destination="rMM-1s-Jur" id="loJ-Bi-gOX"/>
+                                            <outlet property="label_countRetweet" destination="ea5-dj-nZ0" id="hyD-Py-yYo"/>
                                             <outlet property="label_dateOfTweet" destination="cTX-mP-zSu" id="yxl-dP-4Nm"/>
                                             <outlet property="label_idOfTweeter" destination="8Oc-gx-eSN" id="5sT-gj-qgz"/>
                                             <outlet property="text_tweetBody" destination="zWn-dM-kFC" id="OJo-Sv-MyM"/>
@@ -421,15 +423,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Di-zb-AiY">
-                                <rect key="frame" x="16" y="141" width="288" height="110"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" selected="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RA-xv-E8n">
                                 <rect key="frame" x="16" y="355" width="19" height="20"/>
                                 <constraints>
@@ -460,6 +453,15 @@
                                     <action selector="button_Fave:" destination="qwD-bt-auL" eventType="touchUpInside" id="RlP-my-WSz"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Di-zb-AiY">
+                                <rect key="frame" x="43" y="139" width="288" height="110"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" selected="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

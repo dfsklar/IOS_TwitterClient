@@ -17,6 +17,8 @@ class TableCell_Tweet: UITableViewCell {
     @IBOutlet weak var label_idOfTweeter: UITextView!
     @IBOutlet weak var text_tweetBody: UITextView!
     
+    @IBOutlet weak var label_countRetweet: UILabel!
+    @IBOutlet weak var label_countFave: UILabel!
     
     @IBAction func handleRetwe(sender: AnyObject) {
         let x = "y"
