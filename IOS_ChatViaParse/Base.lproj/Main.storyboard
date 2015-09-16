@@ -428,9 +428,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label_Handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-Nv-CnU">
-                                <rect key="frame" x="68" y="101" width="82" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label_Handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-Nv-CnU">
+                                <rect key="frame" x="68" y="102" width="82" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -506,6 +506,12 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzG-97-cse">
+                                <rect key="frame" x="275" y="74" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -523,10 +529,12 @@
                             <constraint firstItem="tiK-A6-GOg" firstAttribute="leading" secondItem="ei1-ja-q3F" secondAttribute="leading" constant="10" id="Ng9-i0-xLw"/>
                             <constraint firstItem="v3J-22-a64" firstAttribute="centerX" secondItem="5Ks-GJ-Ol9" secondAttribute="centerX" id="TbR-FN-ErS"/>
                             <constraint firstItem="TYX-8m-itc" firstAttribute="leading" secondItem="tiK-A6-GOg" secondAttribute="trailing" constant="13" id="Twt-wb-pBt"/>
+                            <constraint firstAttribute="trailing" secondItem="RzG-97-cse" secondAttribute="trailing" constant="12" id="Wao-d5-EmV"/>
                             <constraint firstItem="3Di-zb-AiY" firstAttribute="top" secondItem="tiK-A6-GOg" secondAttribute="bottom" constant="15" id="XGx-b9-ElI"/>
                             <constraint firstItem="tiK-A6-GOg" firstAttribute="top" secondItem="tgj-yU-RbU" secondAttribute="bottom" constant="13" id="YRZ-Yv-Akk"/>
+                            <constraint firstItem="RzG-97-cse" firstAttribute="top" secondItem="tgj-yU-RbU" secondAttribute="bottom" constant="10" id="Zlg-fO-cfo"/>
                             <constraint firstItem="ZyG-tB-oG6" firstAttribute="centerX" secondItem="drw-Dc-PnH" secondAttribute="centerX" id="fC6-mz-kHU"/>
-                            <constraint firstItem="GzV-Nv-CnU" firstAttribute="top" secondItem="TYX-8m-itc" secondAttribute="bottom" constant="7" id="igw-Wb-8Ma"/>
+                            <constraint firstItem="GzV-Nv-CnU" firstAttribute="top" secondItem="TYX-8m-itc" secondAttribute="bottom" constant="9" id="igw-Wb-8Ma"/>
                             <constraint firstItem="3RA-xv-E8n" firstAttribute="leading" secondItem="c1D-AI-fn4" secondAttribute="trailing" constant="43" id="kpX-kf-JHv"/>
                             <constraint firstItem="tiK-A6-GOg" firstAttribute="top" secondItem="TYX-8m-itc" secondAttribute="top" id="ln6-4x-ivD"/>
                             <constraint firstItem="ZyG-tB-oG6" firstAttribute="centerY" secondItem="5Ks-GJ-Ol9" secondAttribute="centerY" id="nTF-bb-43q"/>
@@ -542,6 +550,7 @@
                         <outlet property="buttonimage_fave" destination="Adn-VW-8fx" id="x43-NG-x45"/>
                         <outlet property="buttonimage_retweet" destination="3RA-xv-E8n" id="zPc-mp-Dfu"/>
                         <outlet property="imageview_Profile" destination="tiK-A6-GOg" id="3DU-PB-4LW"/>
+                        <outlet property="label_Date" destination="RzG-97-cse" id="lhn-8V-YDQ"/>
                         <outlet property="label_Handle" destination="GzV-Nv-CnU" id="9Lp-6A-4mi"/>
                         <outlet property="label_Name" destination="TYX-8m-itc" id="kpo-EN-aA1"/>
                         <outlet property="label_countFave" destination="drw-Dc-PnH" id="r1q-re-yGc"/>

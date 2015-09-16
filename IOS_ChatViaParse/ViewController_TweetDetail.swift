@@ -26,6 +26,7 @@ class ViewController_TweetDetail: UIViewController {
     @IBOutlet weak var label_countRetweet: UILabel!
     @IBOutlet weak var label_countFave: UILabel!
     
+    @IBOutlet weak var label_Date: UILabel!
     
     
     
@@ -116,6 +117,8 @@ class ViewController_TweetDetail: UIViewController {
         
         label_Name.text = theTweet.user!.name
         label_Handle.text = "@" + theTweet.user!.handle!
+        
+        label_Date.text = theTweet.creationTime?.shortTimeAgoSinceNow()
         
         imageview_Profile.setImageWithURL(theTweet.user!.profileImage)
 

@@ -158,7 +158,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         
         cell.text_tweetBody.text = theTweet.text
         
-        cell.label_idOfTweeter.text = theUser.name! + "   @" + theUser.handle!
+        cell.label_idOfTweeter.text = theUser.name! // cleaner without this: + "   @" + theUser.handle!
 
 	// UITextViews have excessive padding that needs to be killed in this tight layout of mine
 	cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
