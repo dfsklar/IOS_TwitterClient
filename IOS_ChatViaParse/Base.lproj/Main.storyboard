@@ -326,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlM-eE-1oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3333" y="175"/>
+            <point key="canvasLocation" x="3618" y="175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ziK-px-zUV">
@@ -401,7 +401,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfj-P3-l89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2981" y="175"/>
+            <point key="canvasLocation" x="3155" y="175"/>
         </scene>
         <!--View Controller Tweet Detail-->
         <scene sceneID="Qvs-G0-b1l">
@@ -531,11 +531,12 @@
                         <outlet property="label_countFave" destination="drw-Dc-PnH" id="r1q-re-yGc"/>
                         <outlet property="label_countRetweet" destination="v3J-22-a64" id="MZ3-8V-UXQ"/>
                         <outlet property="textview_Body" destination="3Di-zb-AiY" id="uTC-Fs-05x"/>
+                        <segue destination="WTj-Pf-zJ8" kind="presentation" identifier="SegueFromDetailToReply" id="ZT8-y4-BIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIg-xS-5FX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3151" y="750"/>
+            <point key="canvasLocation" x="3213" y="750"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9z5-ih-cOU">
@@ -565,8 +566,8 @@
         <image name="retweet" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gns-ax-yjQ"/>
+        <segue reference="ZT8-y4-BIx"/>
         <segue reference="yl4-bm-X75"/>
-        <segue reference="rqW-eP-e7R"/>
+        <segue reference="gns-ax-yjQ"/>
     </inferredMetricsTieBreakers>
 </document>

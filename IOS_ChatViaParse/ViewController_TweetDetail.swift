@@ -39,7 +39,16 @@ class ViewController_TweetDetail: UIViewController {
         })
     }
 
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationViewC = segue.destinationViewController as? ViewController_Compose {
+            destinationViewC.originalTweet = self.origTweet
+        }
+    }
+
     @IBAction func button_Reply(sender: AnyObject) {
+        performSegueWithIdentifier("SegueFromDetailToReply", sender: self)
     }
     
     

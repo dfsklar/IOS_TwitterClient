@@ -15,9 +15,6 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     var refreshControl: UIRefreshControl!
     
     
-    func onTimer() {
-    }
-    
     var tweetCollection : [Tweet] = []
     
     
@@ -100,8 +97,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         // There is no way thus to detect the case of the segue to the compose view.
         // Strangely though: the segue actually works: it does open the VC_Compose !
         //
-        if let destinationViewC2 = segue.destinationViewController as? ViewController_Compose {
-            destinationViewC2.originalTweet = self.originalTweet
+        if let destinationViewC = segue.destinationViewController as? ViewController_Compose {
+            destinationViewC.originalTweet = self.originalTweet
         }
 
     }
@@ -159,10 +156,9 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         cell.text_tweetBody.text = theTweet.text
         
         cell.label_idOfTweeter.text = theUser.name! + "   @" + theUser.handle!
-        /*
-        cell.label_idOfTweeter.attributedText = convertText("<span style='font-size:10px;font-family:Arial'>" + theUser.name! + " <span style='color:grey'> @"+theUser.handle!+"</span></span>")
-        */
-        cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
+
+	// UITextViews have excessive padding that needs to be killed in this tight layout of mine
+	cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         cell.text_tweetBody.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         
         cell.image_profile.setImageWithURL(theTweet.user!.profileImage)
