@@ -95,6 +95,11 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
             }
         }
 
+        // This next line *should* be picking up the other case -- the segue called "VC_ComposeReply" --
+        // however it is failing -- the destVC turns out to be self (!!!) and thus the if-let returns false.
+        // There is no way thus to detect the case of the segue to the compose view.
+        // Strangely though: the segue actually works: it does open the VC_Compose !
+        //
         if let destinationViewC2 = segue.destinationViewController as? ViewController_Compose {
             destinationViewC2.originalTweet = self.originalTweet
         }
