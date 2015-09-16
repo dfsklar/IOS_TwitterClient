@@ -45,7 +45,7 @@ class TableCell_Tweet: UITableViewCell {
         label.text = nonzeroIntToString(valCount)
         let imageToShow = (which + (valAlreadyByThisUser ? "_on" : "" ))
         println(imageToShow)
-        button.imageView!.image = UIImage(named: imageToShow)
+        button.setImage(UIImage(named: imageToShow)!, forState:UIControlState.Normal)
     }
     
     
