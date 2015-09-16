@@ -186,6 +186,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonimage_fave" destination="RqE-UM-hl0" id="hbW-h7-Ojy"/>
+                                            <outlet property="buttonimage_retweet" destination="OUt-uk-urz" id="wi1-mx-H5G"/>
                                             <outlet property="image_profile" destination="9UH-wH-88E" id="Vma-Mc-akc"/>
                                             <outlet property="label_countFave" destination="rMM-1s-Jur" id="loJ-Bi-gOX"/>
                                             <outlet property="label_countRetweet" destination="ea5-dj-nZ0" id="hyD-Py-yYo"/>

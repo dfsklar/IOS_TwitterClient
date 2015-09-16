@@ -105,6 +105,15 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
+    // A "curation" button is a retweet or fave button.
+    // These are special in that they have a state ("nonzero" vs "zero") needing
+    // formatting nudges for distinguising.
+    func setupCurationButtonState(which: String, button: UIButton, label: UILabel, valCount: Int, valAlreadyByThisUser: Bool) {
+        label.text = nonzeroIntToString(valCount)
+        button.imageView!.image = UIImage(named: (which + (valAlreadyByThisUser ? "_on" : "" )))
+    }
+    
+    
     // CELL FOR ROW
     func tableView(tweetStack: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
@@ -120,8 +129,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         
         cell.label_dateOfTweet.text = theTweet.creationTime?.shortTimeAgoSinceNow()
         
-        cell.label_countFave.text = nonzeroIntToString(theTweet.favoriteCount)
-        cell.label_countRetweet.text = nonzeroIntToString(theTweet.retweetCount)
+        setupCurationButtonState("favorite", button: cell.buttonimage_fave, label: cell.label_countFave, valCount: theTweet.favoriteCount, valAlreadyByThisUser: theTweet.thisUserFaved)
+        setupCurationButtonState("retweet", button: cell.buttonimage_retweet, label: cell.label_countRetweet, valCount:theTweet.retweetCount, valAlreadyByThisUser: theTweet.thisUserRetweeted)
         
         return cell
     }

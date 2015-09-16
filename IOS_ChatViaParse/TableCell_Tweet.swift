@@ -20,6 +20,10 @@ class TableCell_Tweet: UITableViewCell {
     @IBOutlet weak var label_countRetweet: UILabel!
     @IBOutlet weak var label_countFave: UILabel!
     
+    @IBOutlet weak var buttonimage_retweet: UIButton!
+    @IBOutlet weak var buttonimage_fave: UIButton!
+    
+    
     @IBAction func handleRetwe(sender: AnyObject) {
         let x = "y"
     }
