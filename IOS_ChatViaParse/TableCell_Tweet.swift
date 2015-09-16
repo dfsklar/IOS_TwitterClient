@@ -23,16 +23,60 @@ class TableCell_Tweet: UITableViewCell {
     @IBOutlet weak var buttonimage_retweet: UIButton!
     @IBOutlet weak var buttonimage_fave: UIButton!
     
+    var origTweet: Tweet!
     
-    @IBAction func handleRetwe(sender: AnyObject) {
-        let x = "y"
+    
+    func nonzeroIntToString (i : Int?) -> String {
+        var retval = ""
+        if let i = i {
+            if (i > 0) {
+                retval = String(i)
+            }
+        }
+        return retval
+    }
+    
+    
+    
+    // A "curation" button is a retweet or fave button.
+    // These are special in that they have a state ("nonzero" vs "zero") needing
+    // formatting nudges for distinguising.
+    func setupCurationButtonState(which: String, button: UIButton, label: UILabel, valCount: Int, valAlreadyByThisUser: Bool) {
+        label.text = nonzeroIntToString(valCount)
+        let imageToShow = (which + (valAlreadyByThisUser ? "_on" : "" ))
+        println(imageToShow)
+        button.imageView!.image = UIImage(named: imageToShow)
+    }
+    
+    
+    // Perform the act of RETWEETING and "update in place" the fave button and count to provide
+    // feedback of the success of the action.
+    @IBAction func button_retweet(sender: AnyObject) {
+        TwitterClient.sharedInstance.reTweet(origTweet.idStr!) { (error) -> Void in
+            if error == nil {
+                self.origTweet.thisUserRetweeted = true
+                self.origTweet.retweetCount++
+                self.setupCurationButtonState("retweet", button: self.buttonimage_retweet, label: self.label_countRetweet, valCount: self.origTweet.retweetCount, valAlreadyByThisUser: true)
+            }
+        }
     }
     
     
     @IBAction func button_reply(sender: AnyObject) {
     }
     
+    
+    
+    // Perform the act of FAVORITING and "update in place" the fave button and count to provide
+    // feedback of the success of the action.
     @IBAction func button_fave(sender: AnyObject) {
+        TwitterClient.sharedInstance.favorThisTweet(origTweet.idStr!) { (error) -> Void in
+            if error == nil {
+                self.origTweet.thisUserFaved = true
+                self.origTweet.favoriteCount++
+                self.setupCurationButtonState("favorite", button: self.buttonimage_fave, label: self.label_countFave, valCount: self.origTweet.favoriteCount, valAlreadyByThisUser: true)
+            }
+        }
     }
     
 }

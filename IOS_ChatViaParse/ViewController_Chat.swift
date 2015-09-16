@@ -94,24 +94,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
-    func nonzeroIntToString (i : Int?) -> String {
-        var retval = ""
-        if let i = i {
-            if (i > 0) {
-                retval = String(i)
-            }
-        }
-        return retval
-    }
-    
-    
-    // A "curation" button is a retweet or fave button.
-    // These are special in that they have a state ("nonzero" vs "zero") needing
-    // formatting nudges for distinguising.
-    func setupCurationButtonState(which: String, button: UIButton, label: UILabel, valCount: Int, valAlreadyByThisUser: Bool) {
-        label.text = nonzeroIntToString(valCount)
-        button.imageView!.image = UIImage(named: (which + (valAlreadyByThisUser ? "_on" : "" )))
-    }
+
+
     
     
     // An HTML-to-attributedstring utility, borrowed from:
@@ -143,12 +127,15 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         
         let theTweet = tweetCollection[indexPath.row]
         let theUser = theTweet.user!
+        
+        cell.origTweet = theTweet
+        
         cell.text_tweetBody.text = theTweet.text
         
-         cell.label_idOfTweeter.text = theUser.name! + "   @" + theUser.handle!
-/*
+        cell.label_idOfTweeter.text = theUser.name! + "   @" + theUser.handle!
+        /*
         cell.label_idOfTweeter.attributedText = convertText("<span style='font-size:10px;font-family:Arial'>" + theUser.name! + " <span style='color:grey'> @"+theUser.handle!+"</span></span>")
-  */
+        */
         cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         cell.text_tweetBody.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         
@@ -156,8 +143,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         
         cell.label_dateOfTweet.text = theTweet.creationTime?.shortTimeAgoSinceNow()
         
-        setupCurationButtonState("favorite", button: cell.buttonimage_fave, label: cell.label_countFave, valCount: theTweet.favoriteCount, valAlreadyByThisUser: theTweet.thisUserFaved)
-        setupCurationButtonState("retweet", button: cell.buttonimage_retweet, label: cell.label_countRetweet, valCount:theTweet.retweetCount, valAlreadyByThisUser: theTweet.thisUserRetweeted)
+        cell.setupCurationButtonState("favorite", button: cell.buttonimage_fave, label: cell.label_countFave, valCount: theTweet.favoriteCount, valAlreadyByThisUser: theTweet.thisUserFaved)
+        cell.setupCurationButtonState("retweet", button: cell.buttonimage_retweet, label: cell.label_countRetweet, valCount:theTweet.retweetCount, valAlreadyByThisUser: theTweet.thisUserRetweeted)
         
         return cell
     }
