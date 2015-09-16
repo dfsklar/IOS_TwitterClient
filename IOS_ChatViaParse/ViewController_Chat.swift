@@ -144,8 +144,11 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         let theTweet = tweetCollection[indexPath.row]
         let theUser = theTweet.user!
         cell.text_tweetBody.text = theTweet.text
-        cell.label_idOfTweeter.attributedText = convertText("<span style='font-size:10px;font-family:Arial'>" + theUser.name! + " <span style='color:grey'> @"+theUser.handle!+"</span></span>")
         
+         cell.label_idOfTweeter.text = theUser.name! + "   @" + theUser.handle!
+/*
+        cell.label_idOfTweeter.attributedText = convertText("<span style='font-size:10px;font-family:Arial'>" + theUser.name! + " <span style='color:grey'> @"+theUser.handle!+"</span></span>")
+  */
         cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         cell.text_tweetBody.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         
