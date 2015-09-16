@@ -41,6 +41,8 @@ class ViewController_Compose: UIViewController {
                 self.originalTweet_id = dictFromPersistence["id"] as! String?
                 self.textview_MessageBody.text = "@" + self.originalTweet_handle! + " "
             }
+	    // Eliminate any evidence of the fact that this was a reply
+	    NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "originalTweetForReply")
         }
         
         self.textview_MessageBody.becomeFirstResponder()
@@ -72,6 +74,7 @@ class ViewController_Compose: UIViewController {
     
     
     @IBAction func handleButton_Cancel(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "originalTweetForReply")
         dismissViewControllerAnimated(true, completion: nil)
     }
 

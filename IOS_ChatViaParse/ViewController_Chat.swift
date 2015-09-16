@@ -60,7 +60,6 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func loadOrReloadTweets() {
-        
         TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
             self.tweetCollection = result
             self.tweetStack.reloadData()
@@ -68,6 +67,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
             self.refreshControl.endRefreshing()
         }
     }
+
     
     
     func tableView(tweetStack: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -566,8 +566,8 @@
         <image name="retweet" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZT8-y4-BIx"/>
-        <segue reference="yl4-bm-X75"/>
+        <segue reference="rqW-eP-e7R"/>
         <segue reference="gns-ax-yjQ"/>
+        <segue reference="yl4-bm-X75"/>
     </inferredMetricsTieBreakers>
 </document>
