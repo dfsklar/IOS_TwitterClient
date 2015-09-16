@@ -27,23 +27,29 @@ class ViewController_TweetDetail: UIViewController {
     @IBOutlet weak var label_countFave: UILabel!
     
     
+    
+    
     @IBAction func button_Retweet(sender: AnyObject) {
         TwitterClient.sharedInstance.reTweet(origTweet.idStr!, completionBlock: { (error) -> Void in
-NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_close", object: nil)
-            if (error != nil) {
-                println(error)
+            if (error == nil) {
+                self.origTweet.thisUserRetweeted = true
+                self.origTweet.retweetCount++
+                self.refresh()
             }
         })
     }
 
     @IBAction func button_Reply(sender: AnyObject) {
     }
+    
+    
 
     @IBAction func button_Fave(sender: AnyObject) {
         TwitterClient.sharedInstance.favorThisTweet(origTweet.idStr!, completionBlock:  { (error) -> Void in
-NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_close", object: nil)
-            if (error != nil) {
-                println(error)
+            if (error == nil) {
+                self.origTweet.thisUserFaved = true
+                self.origTweet.favoriteCount++
+                self.refresh()
             }
         })
     }
