@@ -531,7 +531,7 @@
                         <outlet property="label_countFave" destination="drw-Dc-PnH" id="r1q-re-yGc"/>
                         <outlet property="label_countRetweet" destination="v3J-22-a64" id="MZ3-8V-UXQ"/>
                         <outlet property="textview_Body" destination="3Di-zb-AiY" id="uTC-Fs-05x"/>
-                        <segue destination="WTj-Pf-zJ8" kind="presentation" identifier="SegueFromDetailToReply" id="ZT8-y4-BIx"/>
+                        <segue destination="WTj-Pf-zJ8" kind="modal" identifier="SegueFromDetailToReply" id="ZT8-y4-BIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIg-xS-5FX" userLabel="First Responder" sceneMemberID="firstResponder"/>

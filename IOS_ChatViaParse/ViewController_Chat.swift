@@ -97,9 +97,10 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         // There is no way thus to detect the case of the segue to the compose view.
         // Strangely though: the segue actually works: it does open the VC_Compose !
         //
-        if let destinationViewC = segue.destinationViewController as? ViewController_Compose {
-            destinationViewC.originalTweet = self.originalTweet
+/*        if let destinationViewC = segue.destinationViewController as? ViewController_Compose {
+            //destinationViewC.originalTweet = self.originalTweet
         }
+*/
 
     }
     
