@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+// I wish refactoring existed in XCode!
+// This should be named ViewController_TweetList !!!!!!!!!
+//
 class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewDelegate , Protocol_ReplyToTweet {
     
     @IBOutlet weak var tweetStack: UITableView!
@@ -16,11 +20,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     var tweetCollection : [Tweet] = []
-    
-    
-    @IBAction func handleIntraCellButton_Retweet(sender: AnyObject) {
-        let x = "y"
-    }
+
     
     
     
@@ -133,11 +133,13 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     // REPLY-TO-TWEET DELEGATE PROTOCOL
-    
-    var originalTweet : Tweet?
+
     
     func showReplyUI(tweet: Tweet) {
-        originalTweet = tweet
+        let origTweet = tweet
+        var replyInfo : NSDictionary = [ "id": origTweet.idStr!, "origSenderHandle": origTweet.user!.handle! ]
+        var data = NSJSONSerialization.dataWithJSONObject(replyInfo, options: nil, error: nil)
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "originalTweetForReply")
         performSegueWithIdentifier("VC_ComposeReply", sender: self)
     }
     
