@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewDelegate , Protocol_ReplyToTweet {
     
     @IBOutlet weak var tweetStack: UITableView!
     
@@ -121,6 +121,17 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     
+    // REPLY-TO-TWEET DELEGATE PROTOCOL
+    
+    var originalTweet : Tweet?
+    
+    func showReplyUI(tweet: Tweet) {
+        originalTweet = tweet
+        performSegueWithIdentifier("VC_Compose", sender: self)
+    }
+    
+    
+    
     // CELL FOR ROW
     func tableView(tweetStack: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
@@ -129,6 +140,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         let theUser = theTweet.user!
         
         cell.origTweet = theTweet
+        
+        cell.callerDelegate = self
         
         cell.text_tweetBody.text = theTweet.text
         

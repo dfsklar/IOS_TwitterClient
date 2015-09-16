@@ -226,7 +226,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="McK-Cb-1s2">
                             <connections>
-                                <segue destination="WTj-Pf-zJ8" kind="presentation" id="rqW-eP-e7R"/>
+                                <segue destination="WTj-Pf-zJ8" kind="presentation" identifier="VC_Compose" id="rqW-eP-e7R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -242,7 +242,7 @@
         <!--Compose-->
         <scene sceneID="gvb-tL-07y">
             <objects>
-                <viewController storyboardIdentifier="VC_Compose" id="fNf-fA-bUN" customClass="ViewController_Compose" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC_Compose" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fNf-fA-bUN" customClass="ViewController_Compose" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KQS-AI-gWp"/>
                         <viewControllerLayoutGuide type="bottom" id="xIj-bQ-PAh"/>
