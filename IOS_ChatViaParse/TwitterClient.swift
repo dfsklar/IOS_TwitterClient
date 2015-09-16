@@ -133,11 +133,11 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     
     
     
-    func sendReplyTweet(message: String, originalTweet: Tweet, completionBlock: (error: NSError?) -> Void) {
+    func sendReplyTweet(message: String, originalTweetID: String, completionBlock: (error: NSError?) -> Void) {
         
         let params: NSDictionary = [
             "status": message,
-            "in_reply_to_status_id": originalTweet.idStr!
+            "in_reply_to_status_id": originalTweetID
         ]
         
         self.POST("1.1/statuses/update.json", parameters: params,

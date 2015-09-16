@@ -49,12 +49,23 @@ class ViewController_Compose: UIViewController {
  
     
     @IBAction func handleButton_Send(sender: AnyObject) {
-        TwitterClient.sharedInstance.sendTweet(textview_MessageBody.text) { (error) -> Void in
-            if error == nil {
-                self.dismissViewControllerAnimated(true, completion: nil)
-            } else {
-                println("Whoa we got an error trying to tweet")
-                println(error?.description)
+        if let origID = self.originalTweet_id {
+            TwitterClient.sharedInstance.sendReplyTweet(textview_MessageBody.text, originalTweetID: origID) { (error) -> Void in
+                if error == nil {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    println("Whoa we got an error trying to tweet")
+                    println(error?.description)
+                }
+            }
+        } else {
+            TwitterClient.sharedInstance.sendTweet(textview_MessageBody.text) { (error) -> Void in
+                if error == nil {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    println("Whoa we got an error trying to tweet")
+                    println(error?.description)
+                }
             }
         }
     }
