@@ -114,14 +114,40 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
+    // An HTML-to-attributedstring utility, borrowed from:
+    // http://stackoverflow.com/questions/27164928/create-an-attributed-string-out-of-plain-android-formated-text-in-swift-for-io
+    //
+    func convertText(inputText: String) -> NSAttributedString {
+        
+        var html = inputText
+        
+        // Replace newline character by HTML line break
+        while let range = html.rangeOfString("\n") {
+            html.replaceRange(range, with: "<br />")
+        }
+        
+        let data = html.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!
+        let attrStr = NSAttributedString(
+            data: data,
+            options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil,
+            error: nil)!
+        return attrStr
+    }
+    
+    
+    
     // CELL FOR ROW
     func tableView(tweetStack: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tweetStack.dequeueReusableCellWithIdentifier("TweetCell") as! TableCell_Tweet
         
         let theTweet = tweetCollection[indexPath.row]
+        let theUser = theTweet.user!
         cell.text_tweetBody.text = theTweet.text
-        cell.label_idOfTweeter.text = theTweet.user!.name
-        
+
+        cell.label_idOfTweeter.text = theUser.name! + "   @" + theUser.handle!
+  
+
         cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         cell.text_tweetBody.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
         
