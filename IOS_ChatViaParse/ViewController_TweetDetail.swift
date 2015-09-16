@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController_TweetDetail: UIViewController {
     
-    var details: Tweet!
+    var origTweet: Tweet!
     
     
     @IBOutlet weak var imageview_Profile: UIImageView!
@@ -23,10 +23,12 @@ class ViewController_TweetDetail: UIViewController {
     @IBOutlet weak var buttonimage_retweet: UIButton!
     @IBOutlet weak var buttonimage_fave: UIButton!
     
+    @IBOutlet weak var label_countRetweet: UILabel!
+    @IBOutlet weak var label_countFave: UILabel!
     
     
     @IBAction func button_Retweet(sender: AnyObject) {
-        TwitterClient.sharedInstance.reTweet(details.idStr!, completionBlock: { (error) -> Void in
+        TwitterClient.sharedInstance.reTweet(origTweet.idStr!, completionBlock: { (error) -> Void in
 NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_close", object: nil)
             if (error != nil) {
                 println(error)
@@ -38,7 +40,7 @@ NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_c
     }
 
     @IBAction func button_Fave(sender: AnyObject) {
-        TwitterClient.sharedInstance.favorThisTweet(details.idStr!, completionBlock:  { (error) -> Void in
+        TwitterClient.sharedInstance.favorThisTweet(origTweet.idStr!, completionBlock:  { (error) -> Void in
 NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_close", object: nil)
             if (error != nil) {
                 println(error)
@@ -75,6 +77,10 @@ NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_c
     
     
     
+    func refresh() {
+        self.setupCurationButtonState("favorite", button: self.buttonimage_fave, label: self.label_countFave, valCount: self.origTweet.favoriteCount, valAlreadyByThisUser: self.origTweet.thisUserFaved)
+        self.setupCurationButtonState("retweet", button: self.buttonimage_retweet, label: self.label_countRetweet, valCount: self.origTweet.retweetCount, valAlreadyByThisUser: self.origTweet.thisUserRetweeted)
+    }
     
     
     
@@ -84,7 +90,7 @@ NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_c
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let theTweet = details
+        let theTweet = origTweet
         
         textview_Body.text = theTweet.text
         
@@ -94,6 +100,8 @@ NSNotificationCenter.defaultCenter().postNotificationName("RequestToDetailView_c
         imageview_Profile.setImageWithURL(theTweet.user!.profileImage)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "RequestToDetailView_close", name: "RequestToDetailView_close", object: nil)
+        
+        refresh()
     }
 
 

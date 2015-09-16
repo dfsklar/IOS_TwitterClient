@@ -89,7 +89,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
             if let cell = sender as? UITableViewCell {
                 let indexPathSelectedCell = tweetStack.indexPathForCell(cell)!
                 let detailsDict = tweetCollection[indexPathSelectedCell.row]
-                destinationViewC.details = detailsDict
+                destinationViewC.origTweet = detailsDict
                 // Deselect the cell that was touched so upon return we have a clean slate
                 tweetStack.deselectRowAtIndexPath(indexPathSelectedCell, animated:false)
             }
