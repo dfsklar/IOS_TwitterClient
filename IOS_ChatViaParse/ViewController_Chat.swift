@@ -21,8 +21,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     var tweetCollection : [Tweet] = []
 
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,10 +96,21 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         // There is no way thus to detect the case of the segue to the compose view.
         // Strangely though: the segue actually works: it does open the VC_Compose !
         //
-/*        if let destinationViewC = segue.destinationViewController as? ViewController_Compose {
-            //destinationViewC.originalTweet = self.originalTweet
+        
+        
+        else if let destinationViewC = segue.destinationViewController as? ViewController_Compose {
+            // THIS IS NEVER REACHED
+            // even though the segue does successfully move to the compose VC!
+            let TimNeedsToLookAtThis = true
+            // ^^^^ Unfortunately we never reach here!
         }
-*/
+        
+        else {
+            // WE SHOULD NEVER GET HERE!
+            // If the user tapped the compose button, the destVC is the compose VC
+            // and thus the above "else if ()" clause should have been reached.
+            let TimNeedsToLookAtThis = true
+        }
 
     }
     
