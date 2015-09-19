@@ -107,8 +107,10 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
         
         else {
             // WE SHOULD NEVER GET HERE!
-            // If the user tapped the compose button, the destVC is the compose VC
-            // and thus the above "else if ()" clause should have been reached.
+            // If the user tapped the compose button, the destination is the compose VC
+            // and thus the above "else if ()" clause should have been reached.  But 
+            // the segue.destinationViewController is not storing the compose VC's
+            // identity even though the segue does end up going to the right VC!
             let TimNeedsToLookAtThis = true
         }
 
