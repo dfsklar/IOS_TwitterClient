@@ -108,7 +108,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="lE7-N8-ZIi" kind="presentation" identifier="SegueFromLoginToChat" id="hZV-cl-8LK"/>
-                        <segue destination="UOt-Zb-sXZ" kind="show" identifier="SegueFromLoginToWrapper" id="3x2-U2-dph"/>
+                        <segue destination="UOt-Zb-sXZ" kind="presentation" identifier="SegueFromLoginToWrapper" id="3x2-U2-dph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -404,7 +404,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ziK-px-zUV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lE7-N8-ZIi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ViewController_TweetStack" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lE7-N8-ZIi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3is-8s-4oZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

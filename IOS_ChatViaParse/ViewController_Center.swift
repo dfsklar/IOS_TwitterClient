@@ -16,9 +16,27 @@ protocol Protocol_CenterViewController {
 }
 
 
+
 class ViewController_Center: UIViewController {
     
+      class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
+
     var delegate : Protocol_CenterViewController?
+
+    
+    override func viewWillAppear(animated: Bool) {
+        let me = "do this"
+        
+        let navc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("ViewController_TweetStack") as? UINavigationController
+        
+        view.addSubview(navc!.view)
+        addChildViewController(navc!)
+        navc!.didMoveToParentViewController(self)
+    }
+
+
+
+
 
 }
 

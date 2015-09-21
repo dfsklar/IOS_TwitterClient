@@ -41,16 +41,27 @@ class WrapperViewController: UIViewController {
         centerViewController = UIStoryboard.centerViewController()
         centerViewController.delegate = self
         
-        // wrap the centerViewController in a navigation controller, so we can push views to it
-        // and display bar button items in the navigation bar
-        centerNavigationController = UINavigationController(rootViewController: centerViewController)
-        view.addSubview(centerNavigationController.view)
-        addChildViewController(centerNavigationController)
-        
-        centerNavigationController.didMoveToParentViewController(self)
-        
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
-        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        
+        let doWrapCenterviewInNav = false
+        
+        if (doWrapCenterviewInNav) {
+            // wrap the centerViewController in a navigation controller, so we can push views to it
+            // and display bar button items in the navigation bar
+            centerNavigationController = UINavigationController(rootViewController: centerViewController)
+            view.addSubview(centerNavigationController.view)
+            addChildViewController(centerNavigationController)
+            
+            centerNavigationController.didMoveToParentViewController(self)
+                    centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        }else {
+            view.addSubview(centerViewController.view)
+            addChildViewController(centerViewController)
+            centerViewController.didMoveToParentViewController(self)
+                    centerViewController.view.addGestureRecognizer(panGestureRecognizer)
+        }
+        
+
     }
     
 }
@@ -103,7 +114,7 @@ extension WrapperViewController: Protocol_CenterViewController {
         if (shouldExpand) {
             currentState = .LeftPanelExpanded
             
-            animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerNavigationController.view.frame) - centerPanelExpandedOffset)
+            animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerViewController.view.frame) - centerPanelExpandedOffset)
         } else {
             animateCenterPanelXPosition(targetPosition: 0) { finished in
                 self.currentState = .BothCollapsed
@@ -116,15 +127,15 @@ extension WrapperViewController: Protocol_CenterViewController {
     
     func animateCenterPanelXPosition(#targetPosition: CGFloat, completion: ((Bool) -> Void)! = nil) {
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
-            self.centerNavigationController.view.frame.origin.x = targetPosition
+            self.centerViewController.view.frame.origin.x = targetPosition
             }, completion: completion)
     }
     
     func showShadowForCenterViewController(shouldShowShadow: Bool) {
         if (shouldShowShadow) {
-            centerNavigationController.view.layer.shadowOpacity = 0.8
+            centerViewController.view.layer.shadowOpacity = 0.8
         } else {
-            centerNavigationController.view.layer.shadowOpacity = 0.0
+            centerViewController.view.layer.shadowOpacity = 0.0
         }
     }
     
