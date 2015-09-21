@@ -19,31 +19,63 @@ protocol Protocol_CenterViewController {
 
 class ViewController_Center: UIViewController {
     
-      class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
+    let subview_names = [ "ViewController_TweetStack", "ViewController_Profile" ]
 
+    let subview_current : String = ""
+    
+    var subview_controllers = [String:UIViewController]()
+    
+    class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
+    
     var delegate : Protocol_CenterViewController?
-
+    
+    
     
     override func viewWillAppear(animated: Bool) {
-        let me = "do this"
+        if count(self.subview_controllers.keys) == 0 {
+            // We need to initialize the set of subviews
+            let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            for svname in subview_names {
+                let vc = sb.instantiateViewControllerWithIdentifier(svname) as? UIViewController
+                subview_controllers[svname] = vc
+            }
+        }
         
-        let navc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("ViewController_TweetStack") as? UINavigationController
-        
-        view.addSubview(navc!.view)
-        addChildViewController(navc!)
-        navc!.didMoveToParentViewController(self)
+        setActiveSubview(subview_names.first!)
     }
-
-
-
-
-
+    
+    
+    func setActiveSubview(svname: String) {
+        if (svname != self.subview_current) {
+            
+            // Decomission the about-to-be-deactivated VC
+            // view.removeFromSuperview()
+            // removeFromParentViewController(
+            
+            let sklar = "sklar"
+            
+            // Commission the new one
+            let new_svc = subview_controllers[svname]!
+            view.addSubview(new_svc.view)
+            addChildViewController(new_svc)
+            new_svc.didMoveToParentViewController(self)
+        }
+    }
+    
+    
 }
 
 
 
 extension ViewController_Center: Protocol_LeftViewController {
-    func itemSelected() {
+    
+    func itemSelected(vcname:String) {
+        
+        // Swap out the current active subVC for the new one
+        self.setActiveSubview(vcname)
+        
+        // Close/cover the side menu panel
         delegate?.collapseSidePanels?()
+        
     }
 }

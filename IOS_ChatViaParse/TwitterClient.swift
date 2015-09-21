@@ -46,15 +46,6 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     
     func fetchTweets(completionBlock: (result: [Tweet], error: NSError?) -> Void) {
 
-    // PERSISTENCE FOR OFFLINE
-        /*
-      if let data = NSUserDefaults.standardUserDefaults().objectForKey("tweetfetch") as? NSData {
-                if let result = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [Tweet] {
-                   completionBlock(result: result, error: nil)
-		   return
-                }
-            }  */
-
         self.GET("1.1/statuses/home_timeline.json", parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 var result : [Tweet] = []
@@ -63,12 +54,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                     for tweetDict in listOfTweets {
                         result.append(Tweet(dict: tweetDict as! NSDictionary))
                     }
-                }
-
-		// Persistence for offline development
-                // NSUserDefaults.standardUserDefaults().setObject(serRep, forKey: "tweetfetch")
-		// NSUserDefaults.standardUserDefaults().synchronize()
-		
+                }		
                 completionBlock(result: result, error: nil)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in

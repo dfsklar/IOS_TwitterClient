@@ -11,12 +11,27 @@ import UIKit
 
 @objc
 protocol Protocol_LeftViewController {
-    func itemSelected()
+    func itemSelected(s:String)
 }
 
 
 class ViewController_Menu: UIViewController {
     
-      var delegate: Protocol_LeftViewController?
-
+    var delegate: Protocol_LeftViewController?
+    
+    
+    @IBAction func Action_Timeline(sender: AnyObject) {
+        delegate!.itemSelected("ViewController_TweetStack")
+    }
+    
+    
+    @IBAction func Action_Profile(sender: AnyObject) {
+        delegate!.itemSelected("ViewController_Profile")
+    }
+    
+    
+    @IBAction func Action_Mentions(sender: AnyObject) {
+        delegate!.itemSelected("mentions")
+    }
+    
 }
