@@ -44,14 +44,18 @@ class ViewController_TweetDetail: UIViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Here again, the prepareForSegue gets the wrong info:
-        // The destination is NOT the compose VC but rather is "self" (*this* VC).
-        // So I have to send messages to the destination VC in a different way.
-	// So Segues are NOT working in this project and I must resort to this use of setObject to pass info.
-        var replyInfo : NSDictionary = [ "id": origTweet.idStr!, "origSenderHandle": origTweet.user!.handle! ]
-        var data = NSJSONSerialization.dataWithJSONObject(replyInfo, options: nil, error: nil)
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "originalTweetForReply")
+        
+        if segue.identifier == "SegueFromDetailToReply" {
+            if let destinationNavC = segue.destinationViewController as? UINavigationController {
+                if let vc = destinationNavC.topViewController as? ViewController_Compose {
+                    vc.originalTweet_handle = self.origTweet.user!.handle!
+                    vc.originalTweet_id = self.origTweet.idStr
+                }
+            }
+            
+        }
     }
+    
     
     @IBAction func button_Reply(sender: AnyObject) {
         performSegueWithIdentifier("SegueFromDetailToReply", sender: self)

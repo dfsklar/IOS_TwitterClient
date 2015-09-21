@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGw-wW-N3g">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGw-wW-N3g">
                                 <rect key="frame" x="148" y="291" width="78" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Sign in">
@@ -26,17 +26,26 @@
                                     <action selector="Action_SignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c0a-Ga-SGT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet Your Heart Out!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp6-qK-odM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tweet Your Heart Out!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp6-qK-odM">
                                 <rect key="frame" x="54" y="126" width="267" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Twitter_logo_blue_48" translatesAutoresizingMaskIntoConstraints="NO" id="O3s-Uy-8xN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Twitter_logo_blue_48" translatesAutoresizingMaskIntoConstraints="NO" id="O3s-Uy-8xN">
                                 <rect key="frame" x="144" y="161" width="86" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="EOO-LY-cqD"/>
+                                    <constraint firstAttribute="height" constant="48" id="Grr-hz-BDp"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Mp6-qK-odM" secondAttribute="centerX" id="LJ0-ob-ah3"/>
+                            <constraint firstAttribute="centerX" secondItem="ZGw-wW-N3g" secondAttribute="centerX" id="cFH-vz-9BH"/>
+                            <constraint firstAttribute="centerX" secondItem="O3s-Uy-8xN" secondAttribute="centerX" id="jE7-7y-BGu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kLx-HI-GUp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -577,7 +586,7 @@
         <image name="retweet" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PQ9-Sg-ogx"/>
+        <segue reference="ZT8-y4-BIx"/>
         <segue reference="gns-ax-yjQ"/>
     </inferredMetricsTieBreakers>
 </document>
