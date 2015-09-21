@@ -23,7 +23,7 @@ class ViewController_Compose: UIViewController {
     
     
 
-
+    
     
     override func viewWillAppear(animated:Bool) {
         if let user = User.currentUser {
@@ -35,14 +35,8 @@ class ViewController_Compose: UIViewController {
         }
         
         // Reply mode?
-        if let data = NSUserDefaults.standardUserDefaults().objectForKey("originalTweetForReply") as? NSData {
-            if let dictFromPersistence = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
-                self.originalTweet_handle = dictFromPersistence["origSenderHandle"] as! String?
-                self.originalTweet_id = dictFromPersistence["id"] as! String?
-                self.textview_MessageBody.text = "@" + self.originalTweet_handle! + " "
-            }
-	    // Eliminate any evidence of the fact that this was a reply
-	    NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "originalTweetForReply")
+        if originalTweet_id != nil {
+            self.textview_MessageBody.text = "@" + self.originalTweet_handle! + " "
         }
         
         self.textview_MessageBody.becomeFirstResponder()

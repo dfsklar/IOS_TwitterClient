@@ -18,6 +18,8 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     var refreshControl: UIRefreshControl!
     
+    // The tweet about which a reply action has just been initiated
+    var originalTweet : Tweet!
     
     var tweetCollection : [Tweet] = []
 
@@ -81,39 +83,34 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     // So this prepare has to bifurcate immediately based on the target/destination VC.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let destinationViewC = segue.destinationViewController as? ViewController_TweetDetail {
-            if let cell = sender as? UITableViewCell {
-                let indexPathSelectedCell = tweetStack.indexPathForCell(cell)!
-                let detailsDict = tweetCollection[indexPathSelectedCell.row]
-                destinationViewC.origTweet = detailsDict
-                // Deselect the cell that was touched so upon return we have a clean slate
-                tweetStack.deselectRowAtIndexPath(indexPathSelectedCell, animated:false)
+        let sid = segue.identifier
+        
+        if sid == "SegueShowDetail" {
+            
+            if let destinationViewC = segue.destinationViewController as? ViewController_TweetDetail {
+                if let cell = sender as? UITableViewCell {
+                    let indexPathSelectedCell = tweetStack.indexPathForCell(cell)!
+                    let detailsDict = tweetCollection[indexPathSelectedCell.row]
+                    destinationViewC.origTweet = detailsDict
+                    // Deselect the cell that was touched so upon return we have a clean slate
+                    tweetStack.deselectRowAtIndexPath(indexPathSelectedCell, animated:false)
+                }
             }
+            
         }
-
-        // This next line *should* be picking up the other case -- the segue called "VC_ComposeReply" --
-        // however it is failing -- the destVC turns out to be self (!!!) and thus the if-let returns false.
-        // There is no way thus to detect the case of the segue to the compose view.
-        // Strangely though: the segue actually works: it does open the VC_Compose !
-        //
-        
-        
-        else if let destinationViewC = segue.destinationViewController as? ViewController_Compose {
-            // THIS IS NEVER REACHED
-            // even though the segue does successfully move to the compose VC!
-            let TimNeedsToLookAtThis = true
-            // ^^^^ Unfortunately we never reach here!
+            
+            
+        else if sid == "VC_ComposeReply" {
+            
+            if let destinationNavC = segue.destinationViewController as? UINavigationController {
+                if let vc = destinationNavC.topViewController as? ViewController_Compose {
+                    vc.originalTweet_handle = self.originalTweet.user!.handle!
+                    vc.originalTweet_id = self.originalTweet.idStr
+                }
+            }
+            
         }
-        
-        else {
-            // WE SHOULD NEVER GET HERE!
-            // If the user tapped the compose button, the destination is the compose VC
-            // and thus the above "else if ()" clause should have been reached.  But 
-            // the segue.destinationViewController is not storing the compose VC's
-            // identity even though the segue does end up going to the right VC!
-            let TimNeedsToLookAtThis = true
-        }
-
+            
     }
     
     
@@ -148,10 +145,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
 
     
     func showReplyUI(tweet: Tweet) {
-        let origTweet = tweet
-        var replyInfo : NSDictionary = [ "id": origTweet.idStr!, "origSenderHandle": origTweet.user!.handle! ]
-        var data = NSJSONSerialization.dataWithJSONObject(replyInfo, options: nil, error: nil)
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "originalTweetForReply")
+        self.originalTweet = tweet
         performSegueWithIdentifier("VC_ComposeReply", sender: self)
     }
     

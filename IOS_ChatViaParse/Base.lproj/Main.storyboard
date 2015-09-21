@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tpa-Ng-pbv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tpa-Ng-pbv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -60,8 +60,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jhf-C4-cFO">
-                                <rect key="frame" x="0.0" y="-8" width="375" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jhf-C4-cFO">
+                                <rect key="frame" x="0.0" y="8" width="320" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="TweetCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="140" id="fMR-Uf-Zup" customClass="TableCell_Tweet" customModule="IOS_ChatViaParse" customModuleProvider="target">
@@ -80,7 +80,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="xaT-lg-RAk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="top" scrollEnabled="NO" editable="NO" text="Name @handle" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oc-gx-eSN">
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="top" misplaced="YES" scrollEnabled="NO" editable="NO" text="Name @handle" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oc-gx-eSN">
                                                     <rect key="frame" x="62" y="9" width="310" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
@@ -92,7 +92,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Body of the tweet" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Body of the tweet" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
                                                     <rect key="frame" x="62" y="33" width="305" height="77"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
@@ -102,7 +102,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/14/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-mP-zSu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/14/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-mP-zSu">
                                                     <rect key="frame" x="320" y="15" width="40" height="14"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
@@ -202,7 +202,7 @@
                                             <outlet property="label_dateOfTweet" destination="cTX-mP-zSu" id="yxl-dP-4Nm"/>
                                             <outlet property="label_idOfTweeter" destination="8Oc-gx-eSN" id="5sT-gj-qgz"/>
                                             <outlet property="text_tweetBody" destination="zWn-dM-kFC" id="OJo-Sv-MyM"/>
-                                            <segue destination="qwD-bt-auL" kind="show" id="yl4-bm-X75"/>
+                                            <segue destination="qwD-bt-auL" kind="show" identifier="SegueShowDetail" id="yl4-bm-X75"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -210,6 +210,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.97647064920000004" green="0.1647058874" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jhf-C4-cFO" secondAttribute="trailing" id="1HW-nX-IQJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Jhf-C4-cFO" secondAttribute="bottom" id="Lu0-Vm-asj"/>
+                            <constraint firstItem="Jhf-C4-cFO" firstAttribute="top" secondItem="PGj-KZ-9t6" secondAttribute="top" constant="8" id="c7k-Rd-CLt"/>
+                            <constraint firstItem="Jhf-C4-cFO" firstAttribute="leading" secondItem="PGj-KZ-9t6" secondAttribute="leading" id="xTM-sS-O2f"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tweets" id="GwX-Le-f6w">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="pvl-Z5-ZCk">
@@ -563,26 +569,6 @@
             </objects>
             <point key="canvasLocation" x="3157" y="950"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9z5-ih-cOU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cac-S8-V9q" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="480"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CBu-aI-BOX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qwD-bt-auL" kind="relationship" relationship="rootViewController" id="bue-N3-mKI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f6I-mW-mDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2773" y="950"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Twitter_logo_blue_48" width="48" height="48"/>
@@ -591,8 +577,7 @@
         <image name="retweet" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yl4-bm-X75"/>
+        <segue reference="PQ9-Sg-ogx"/>
         <segue reference="gns-ax-yjQ"/>
-        <segue reference="rqW-eP-e7R"/>
     </inferredMetricsTieBreakers>
 </document>
