@@ -9,10 +9,11 @@
 import UIKit
 
 
+
 // I wish refactoring existed in XCode!
 // This should be named ViewController_TweetList !!!!!!!!!
 //
-class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewDelegate , Protocol_ReplyToTweet {
+class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewDelegate, Protocol_ReplyToTweet {
     
     @IBOutlet weak var tweetStack: UITableView!
     
@@ -22,7 +23,6 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     var originalTweet : Tweet!
     
     var tweetCollection : [Tweet] = []
-
 
     
     override func viewDidLoad() {

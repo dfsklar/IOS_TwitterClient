@@ -4,6 +4,44 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--View Controller Menu-->
+        <scene sceneID="cQo-4x-HIt">
+            <objects>
+                <viewController storyboardIdentifier="ViewController_Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IcW-Zh-fiR" customClass="ViewController_Menu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tcj-ak-9DQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rgB-4P-G53"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fhf-Es-HZI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQq-eW-4Ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="-381"/>
+        </scene>
+        <!--View Controller Center-->
+        <scene sceneID="li5-XK-txm">
+            <objects>
+                <viewController id="6Pn-Js-FyT" customClass="ViewController_Center" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IvR-62-bih"/>
+                        <viewControllerLayoutGuide type="bottom" id="hsi-bg-1GF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WBG-p5-FeE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.97647064920000004" green="0.1647058874" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTP-TI-xWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716" y="-381"/>
+        </scene>
         <!--View Controller Login-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -55,12 +93,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.5" y="336.5"/>
+            <point key="canvasLocation" x="808.5" y="369.5"/>
         </scene>
         <!--Tweets-->
         <scene sceneID="7wC-6R-Yht">
             <objects>
-                <viewController storyboardIdentifier="TweetstreamVC" id="7jA-lT-qZH" customClass="ViewController_Chat" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetstreamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7jA-lT-qZH" customClass="ViewController_Chat" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B6o-Vw-iHw"/>
                         <viewControllerLayoutGuide type="bottom" id="hVb-ga-sd7"/>
@@ -341,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlM-eE-1oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3530" y="-161"/>
+            <point key="canvasLocation" x="3718" y="-149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ziK-px-zUV">
@@ -359,27 +397,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u98-Su-Gqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522.5" y="335.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7ba-Th-TCv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Zp-Ab-yVC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="td0-fq-PGi"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Brc-aa-0FP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7jA-lT-qZH" kind="relationship" relationship="rootViewController" id="gns-ax-yjQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pV3-2M-uTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1973" y="160"/>
+            <point key="canvasLocation" x="2082.5" y="341.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ii9-pX-D8E">
@@ -416,7 +434,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfj-P3-l89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3163" y="-161"/>
+            <point key="canvasLocation" x="3371" y="-149"/>
         </scene>
         <!--View Controller Tweet Detail-->
         <scene sceneID="Qvs-G0-b1l">
@@ -576,7 +594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIg-xS-5FX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3157" y="950"/>
+            <point key="canvasLocation" x="2893" y="1002"/>
         </scene>
     </scenes>
     <resources>
@@ -586,7 +604,6 @@
         <image name="retweet" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZT8-y4-BIx"/>
-        <segue reference="gns-ax-yjQ"/>
+        <segue reference="rqW-eP-e7R"/>
     </inferredMetricsTieBreakers>
 </document>
