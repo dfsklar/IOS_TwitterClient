@@ -21,7 +21,7 @@ class ViewController_Login: UIViewController {
     @IBAction func Action_SignIn(sender: AnyObject) {
         TwitterClient.sharedInstance.login { (user, error) -> Void in
             if user != nil {
-                self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
+                self.performSegueWithIdentifier("SegueFromLoginToWrapper", sender: self)
             }
         }
     }
@@ -32,12 +32,10 @@ class ViewController_Login: UIViewController {
     
     
     
-    
-    
-    override func viewDidAppear(animated:Bool) {
-        super.viewDidAppear(animated)
-	if (User.currentUser != nil) {
-	    self.performSegueWithIdentifier("SegueFromLoginToChat", sender: self)
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
+        if (User.currentUser != nil) {
+            self.performSegueWithIdentifier("SegueFromLoginToWrapper", sender: self)
         }
     }
     

@@ -162,7 +162,8 @@ private extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
     
     class func leftViewController() -> ViewController_Menu? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? ViewController_Menu
+        let retval = mainStoryboard().instantiateViewControllerWithIdentifier("MenuViewController") as? ViewController_Menu
+        return retval
     }
     
     class func centerViewController() -> ViewController_Center? {

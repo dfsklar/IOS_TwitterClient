@@ -7,7 +7,7 @@
         <!--View Controller Menu-->
         <scene sceneID="cQo-4x-HIt">
             <objects>
-                <viewController storyboardIdentifier="ViewController_Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IcW-Zh-fiR" customClass="ViewController_Menu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IcW-Zh-fiR" customClass="ViewController_Menu" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tcj-ak-9DQ"/>
                         <viewControllerLayoutGuide type="bottom" id="rgB-4P-G53"/>
@@ -21,12 +21,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQq-eW-4Ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="-381"/>
+            <point key="canvasLocation" x="864" y="-391"/>
         </scene>
-        <!--View Controller Center-->
+        <!--Wrapper View Controller-->
+        <scene sceneID="jg7-Rh-el7">
+            <objects>
+                <viewController id="UOt-Zb-sXZ" customClass="WrapperViewController" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LTC-4n-sag"/>
+                        <viewControllerLayoutGuide type="bottom" id="ui5-PI-qaK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uH6-KA-Lkl" customClass="ViewController_">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZjC-QZ-V4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525" y="-612"/>
+        </scene>
+        <!--CENTER-->
         <scene sceneID="li5-XK-txm">
             <objects>
-                <viewController id="6Pn-Js-FyT" customClass="ViewController_Center" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CenterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Pn-Js-FyT" userLabel="CENTER" customClass="ViewController_Center" customModule="IOS_ChatViaParse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IvR-62-bih"/>
                         <viewControllerLayoutGuide type="bottom" id="hsi-bg-1GF"/>
@@ -40,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTP-TI-xWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="-381"/>
+            <point key="canvasLocation" x="1962" y="-612"/>
         </scene>
         <!--View Controller Login-->
         <scene sceneID="ufC-wZ-h7g">
@@ -89,6 +108,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="lE7-N8-ZIi" kind="presentation" identifier="SegueFromLoginToChat" id="hZV-cl-8LK"/>
+                        <segue destination="UOt-Zb-sXZ" kind="show" identifier="SegueFromLoginToWrapper" id="3x2-U2-dph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
