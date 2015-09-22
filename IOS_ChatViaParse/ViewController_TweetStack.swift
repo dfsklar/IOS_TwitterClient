@@ -11,17 +11,12 @@ import UIKit
 
 
 
-class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITableViewDelegate, Protocol_ReplyToTweet {
+class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITableViewDelegate, Protocol_ActOnTweet {
     
     
     @IBOutlet weak var navbar: UINavigationItem!
-
-    
-    
     @IBOutlet weak var tweetStack: UITableView!
 
-    
-    
 
     // This tweetstack can be used to show any collection of tweets, not just the authuser's own set.
     // These variables set up the "source" and "mode" for the tweet-collection fetching.
@@ -31,8 +26,9 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
     // The result of the fetch operation:
     var tweetCollection : [Tweet] = []
     
-    // The tweet about which a reply action has just been initiated
+    // The tweet/user related to an action requested via interaction with a TweetCell
     var originalTweet : Tweet!
+    var userOfInterest : User!
 
 
     var refreshControl: UIRefreshControl!
@@ -137,6 +133,11 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
                 }
             }
             
+        case "PresentProfileFromTweetStack":
+            if let dest = segue.destinationViewController as? UINavigationController {
+            
+            }
+            
         default:
             println("Unexpected segue identifier")
         }
@@ -150,13 +151,22 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
     
     
     
-    // REPLY-TO-TWEET DELEGATE PROTOCOL
+    // ACT-ON-TWEET DELEGATE PROTOCOL
 
-    
     func showReplyUI(tweet: Tweet) {
         self.originalTweet = tweet
         performSegueWithIdentifier("VC_ComposeReply", sender: self)
     }
+    
+    func showUserProfile(user: User) {
+        self.userOfInterest = user
+        performSegueWithIdentifier("PresentProfileFromTweetStack", sender: self)
+    }
+    
+    
+    
+    
+    
     
     
     

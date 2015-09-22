@@ -9,14 +9,15 @@
 import UIKit
 
 
-protocol Protocol_ReplyToTweet {
+protocol Protocol_ActOnTweet {
     func showReplyUI(tweet: Tweet)
+    func showUserProfile(user: User)
 }
 
 
 class TableCell_Tweet: UITableViewCell {
 
-    var callerDelegate: Protocol_ReplyToTweet?
+    var callerDelegate: Protocol_ActOnTweet?
     
     @IBOutlet weak var image_profile: UIImageView!
     
@@ -29,6 +30,9 @@ class TableCell_Tweet: UITableViewCell {
     
     @IBOutlet weak var buttonimage_retweet: UIButton!
     @IBOutlet weak var buttonimage_fave: UIButton!
+    
+    
+    
     
     var origTweet: Tweet!
     
@@ -76,6 +80,18 @@ class TableCell_Tweet: UITableViewCell {
             delegate.showReplyUI(self.origTweet)
         }
     }
+    
+    
+    
+    @IBAction func button_goToProfile(sender: AnyObject) {
+        // If the owner/caller of this table view did set up a delegate
+        // to handle a reply-flavored compose-tweet action:
+        if let delegate = callerDelegate {
+            delegate.showUserProfile(self.origTweet.user!)
+        }
+    }
+    
+    
     
     
     
