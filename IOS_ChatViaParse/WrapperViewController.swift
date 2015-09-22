@@ -10,10 +10,17 @@ import UIKit
 import QuartzCore
 
 
+/*
+
+This pattern and much of the code was inspired and borrowed from
+Ray Wenderlich's excellent tutorial on implementation of
+slide-out navigation panels.
+
+*/
 
 
 enum SlideOutState {
-    case BothCollapsed
+    case LeftPanelCollapsed
     case LeftPanelExpanded
 }
 
@@ -24,9 +31,9 @@ class WrapperViewController: UIViewController {
     var centerViewController: ViewController_Center!
     
     
-    var currentState: SlideOutState = .BothCollapsed {
+    var currentState: SlideOutState = .LeftPanelCollapsed {
         didSet {
-            let shouldShowShadow = currentState != .BothCollapsed
+            let shouldShowShadow = currentState != .LeftPanelCollapsed
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
@@ -98,11 +105,10 @@ extension WrapperViewController: Protocol_CenterViewController {
     func animateLeftPanel(#shouldExpand: Bool) {
         if (shouldExpand) {
             currentState = .LeftPanelExpanded
-            
             animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerViewController.view.frame) - centerPanelExpandedOffset)
         } else {
             animateCenterPanelXPosition(targetPosition: 0) { finished in
-                self.currentState = .BothCollapsed
+                self.currentState = .LeftPanelCollapsed
                 
                 self.menuViewController!.view.removeFromSuperview()
                 self.menuViewController = nil;
@@ -126,6 +132,9 @@ extension WrapperViewController: Protocol_CenterViewController {
     
 }
 
+
+
+
 extension WrapperViewController: UIGestureRecognizerDelegate {
     
     func handlePanGesture(recognizer: UIPanGestureRecognizer) {
@@ -133,7 +142,7 @@ extension WrapperViewController: UIGestureRecognizerDelegate {
         
         switch(recognizer.state) {
         case .Began:
-            if (currentState == .BothCollapsed) {
+            if (currentState == .LeftPanelCollapsed) {
                 if (gestureIsDraggingFromLeftToRight) {
                     addLeftPanelViewController()
                 }
@@ -143,16 +152,16 @@ extension WrapperViewController: UIGestureRecognizerDelegate {
             recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
             recognizer.setTranslation(CGPointZero, inView: view)
         case .Ended:
-            if (menuViewController != nil) {
-                // animate the side panel open or closed based on whether the view has moved more or less than halfway
-                let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
-                animateLeftPanel(shouldExpand: hasMovedGreaterThanHalfway)
-            }
+            // animate the side panel open or closed based on whether the view has moved more or less than halfway
+            let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
+            animateLeftPanel(shouldExpand: hasMovedGreaterThanHalfway)
         default:
             break
         }
     }
 }
+
+
 
 private extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }

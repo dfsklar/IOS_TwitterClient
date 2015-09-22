@@ -25,13 +25,12 @@ class ViewController_Center: UIViewController {
     
     var subview_controllers = [String:UIViewController]()
     
-    class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
-    
     var delegate : Protocol_CenterViewController?
     
     
     
     override func viewWillAppear(animated: Bool) {
+        // Only perform this once: creation of the three subviews for the "center pane"
         if count(self.subview_controllers.keys) == 0 {
             // We need to initialize the set of subviews
             let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -40,9 +39,7 @@ class ViewController_Center: UIViewController {
                 subview_controllers[svname] = vc
             }
         }
-
-	setActiveSubview("ViewController_Mentions")
-//        setActiveSubview(subview_names.first!)
+        setActiveSubview(subview_names.first!)
     }
     
     
@@ -63,7 +60,6 @@ class ViewController_Center: UIViewController {
         }
     }
     
-    
 }
 
 
@@ -76,7 +72,9 @@ extension ViewController_Center: Protocol_LeftViewController {
         self.setActiveSubview(vcname)
         
         // Close/cover the side menu panel
-        delegate?.collapseSidePanels?()
+        if let delegate = delegate {
+            delegate.collapseSidePanels!()
+        }
         
     }
 }

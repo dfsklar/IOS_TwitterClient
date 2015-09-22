@@ -351,15 +351,16 @@
                                                     </connections>
                                                 </button>
                                                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="top" scrollEnabled="NO" editable="NO" text="Name @handle" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oc-gx-eSN">
-                                                    <rect key="frame" x="62" y="9" width="255" height="20"/>
+                                                    <rect key="frame" x="62" y="9" width="255" height="24"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                                                     </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="WOj-4a-4a1"/>
+                                                        <constraint firstAttribute="height" constant="24" id="WOj-4a-4a1"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/14/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-mP-zSu">
@@ -436,6 +437,7 @@
                                                     </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -461,7 +463,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="cTX-mP-zSu" secondAttribute="trailing" constant="15" id="msL-A6-QxJ"/>
                                                 <constraint firstItem="RqE-UM-hl0" firstAttribute="bottom" secondItem="cJo-8F-mIx" secondAttribute="bottom" id="n9J-pH-33a"/>
                                                 <constraint firstItem="9UH-wH-88E" firstAttribute="top" secondItem="TL2-3e-aqY" secondAttribute="top" id="shR-fw-HT0"/>
-                                                <constraint firstItem="zWn-dM-kFC" firstAttribute="top" secondItem="8Oc-gx-eSN" secondAttribute="bottom" constant="4" id="uSK-gO-4iG"/>
+                                                <constraint firstItem="zWn-dM-kFC" firstAttribute="top" secondItem="8Oc-gx-eSN" secondAttribute="bottom" id="uSK-gO-4iG"/>
                                                 <constraint firstItem="zWn-dM-kFC" firstAttribute="leading" secondItem="8Oc-gx-eSN" secondAttribute="leading" id="uzm-Jw-szL"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -868,7 +870,7 @@
         <image name="retweet" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zo1-cm-psX"/>
-        <segue reference="ZT8-y4-BIx"/>
+        <segue reference="arp-Eq-Wkz"/>
+        <segue reference="rqW-eP-e7R"/>
     </inferredMetricsTieBreakers>
 </document>

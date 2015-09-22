@@ -178,7 +178,7 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
         
         cell.text_tweetBody.text = theTweet.text
         
-        cell.label_idOfTweeter.text = theUser.name! // cleaner without this: + "   @" + theUser.handle!
+        cell.label_idOfTweeter.text = theUser.name! 
 
 	// UITextViews have excessive padding that needs to be killed in this tight layout of mine
 	cell.label_idOfTweeter.contentInset = UIEdgeInsetsMake(-3,-2,0,0);
