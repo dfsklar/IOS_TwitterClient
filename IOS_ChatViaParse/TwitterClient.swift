@@ -13,6 +13,11 @@ let twitterConsumerSecret = "LH6r3iWcMEbbvLq2rcZtb6HdJz9O6pqPojZfrkT05DamDj7iIh"
 let twitterBaseURL = NSURL(string: "https://api.twitter.com")
 
 
+enum TweetFetchMode {
+    case Timeline
+    case Mentions
+}
+
 class TwitterClient: BDBOAuth1RequestOperationManager {
     
     var userAuthorized: User?
@@ -77,19 +82,23 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
 
     
     // If a user is provided, this will obtain an arbitrary user timeline.
-    // Otherwise, it will obtain the "home timeline" of the auth'd user.
-    func fetchTweets(idUser: String?, completionBlock: (result: [Tweet], error: NSError?) -> Void) {
+    // Otherwise, it will obtain the "home timeline" or "mentioned-in timeline" of the auth'd user.
+    
+    func fetchTweets(idUser: String?, mode: TweetFetchMode, completionBlock: (result: [Tweet], error: NSError?) -> Void) {
         var params = [String: String]()
         var urlGet = "1.1/statuses/home_timeline.json"
         if let idUser = idUser {
             params["user_id"] = idUser
             urlGet = "1.1/statuses/user_timeline.json"
+        } else {
+            if mode == TweetFetchMode.Mentions {
+                urlGet = "1.1/statuses/mentions_timeline.json"
+            }
         }
         
         self.GET(urlGet, parameters: params,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 var result : [Tweet] = []
-                let serRep = (response).serializedRepresentation
                 if let listOfTweets = response as? NSArray {
                     for tweetDict in listOfTweets {
                         result.append(Tweet(dict: tweetDict as! NSDictionary))
@@ -102,6 +111,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
             }
         )
     }
+    
     
     
     
@@ -120,6 +130,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
             }
         )
     }
+    
+    
     
     
     

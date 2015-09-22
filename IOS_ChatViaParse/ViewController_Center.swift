@@ -19,7 +19,7 @@ protocol Protocol_CenterViewController {
 
 class ViewController_Center: UIViewController {
     
-    let subview_names = [ "ViewController_TweetStack", "ViewController_Profile" ]
+    let subview_names = [ "ViewController_TweetStack", "ViewController_Profile", "ViewController_Mentions"]
 
     let subview_current : String = ""
     
@@ -40,8 +40,9 @@ class ViewController_Center: UIViewController {
                 subview_controllers[svname] = vc
             }
         }
-        
-        setActiveSubview(subview_names.first!)
+
+	setActiveSubview("ViewController_Mentions")
+//        setActiveSubview(subview_names.first!)
     }
     
     

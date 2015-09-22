@@ -10,19 +10,26 @@ import UIKit
 
 
 
-// I wish refactoring existed in XCode!
-// This should be named ViewController_TweetList !!!!!!!!!
-//
-class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewDelegate, Protocol_ReplyToTweet {
+
+class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITableViewDelegate, Protocol_ReplyToTweet {
     
     @IBOutlet weak var tweetStack: UITableView!
-    
-    var refreshControl: UIRefreshControl!
+
+
+    // This tweetstack can be used to show any collection of tweets, not just the authuser's own set.
+    // These variables set up the "source" and "mode" for the tweet-collection fetching.
+    var fetch_mode: TweetFetchMode = .Timeline
+    var fetch_userId: String?
+
+    // The result of the fetch operation:
+    var tweetCollection : [Tweet] = []
     
     // The tweet about which a reply action has just been initiated
     var originalTweet : Tweet!
-    
-    var tweetCollection : [Tweet] = []
+
+
+
+    var refreshControl: UIRefreshControl!
 
     
     override func viewDidLoad() {
@@ -61,7 +68,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func loadOrReloadTweets() {
-        TwitterClient.sharedInstance.fetchTweets(nil) { (result, error) -> Void in
+        TwitterClient.sharedInstance.fetchTweets(fetch_userId, mode: fetch_mode) { (result, error) -> Void in
             self.tweetCollection = result
             self.tweetStack.reloadData()
             SwiftLoader.hide()
@@ -83,10 +90,9 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     // So this prepare has to bifurcate immediately based on the target/destination VC.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let sid = segue.identifier
+        switch segue.identifier! {
         
-        if sid == "SegueShowDetail" {
-            
+        case "SegueShowDetail":
             if let destinationViewC = segue.destinationViewController as? ViewController_TweetDetail {
                 if let cell = sender as? UITableViewCell {
                     let indexPathSelectedCell = tweetStack.indexPathForCell(cell)!
@@ -97,11 +103,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
             
-        }
-            
-            
-        else if sid == "VC_ComposeReply" {
-            
+        case "VC_ComposeReply":
             if let destinationNavC = segue.destinationViewController as? UINavigationController {
                 if let vc = destinationNavC.topViewController as? ViewController_Compose {
                     vc.originalTweet_handle = self.originalTweet.user!.handle!
@@ -109,35 +111,16 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
             
+        default:
+            println("Unexpected segue identifier")
         }
-            
+        
     }
     
     
 
 
     
-    
-    // An HTML-to-attributedstring utility, borrowed from:
-    // http://stackoverflow.com/questions/27164928/create-an-attributed-string-out-of-plain-android-formated-text-in-swift-for-io
-    //
-    func convertText(inputText: String) -> NSAttributedString {
-        
-        var html = inputText
-        
-        // Replace newline character by HTML line break
-        while let range = html.rangeOfString("\n") {
-            html.replaceRange(range, with: "<br />")
-        }
-        
-        let data = html.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!
-        let attrStr = NSAttributedString(
-            data: data,
-            options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-            documentAttributes: nil,
-            error: nil)!
-        return attrStr
-    }
     
     
     

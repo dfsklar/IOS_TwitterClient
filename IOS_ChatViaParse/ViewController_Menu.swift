@@ -31,7 +31,7 @@ class ViewController_Menu: UIViewController {
     
     
     @IBAction func Action_Mentions(sender: AnyObject) {
-        delegate!.itemSelected("mentions")
+        delegate!.itemSelected("ViewController_Mentions")
     }
     
 }
