@@ -44,10 +44,6 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    func determineLeftRightButtonVis() -> Bool {
-        return (fetch_mode == .Timeline) && (fetch_userId == nil)
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +52,6 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
         tweetStack.delegate = self
         
         navbar.title = determineTitle()
-        let showButtons = determineLeftRightButtonVis()
-        navbar.leftBarButtonItem!.enabled = !showButtons
-        navbar.rightBarButtonItem!.enabled = !showButtons
         
         tweetStack.rowHeight = UITableViewAutomaticDimension
         tweetStack.estimatedRowHeight = 200

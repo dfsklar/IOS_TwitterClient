@@ -259,8 +259,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGw-wW-N3g">
-                                <rect key="frame" x="148" y="291" width="78" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGw-wW-N3g">
+                                <rect key="frame" x="148" y="248" width="78" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Sign in">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,14 +269,14 @@
                                     <action selector="Action_SignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c0a-Ga-SGT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tweet Your Heart Out!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp6-qK-odM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Your Heart Out!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp6-qK-odM">
                                 <rect key="frame" x="54" y="126" width="267" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Twitter_logo_blue_48" translatesAutoresizingMaskIntoConstraints="NO" id="O3s-Uy-8xN">
-                                <rect key="frame" x="144" y="161" width="86" height="84"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter_logo_blue_48" translatesAutoresizingMaskIntoConstraints="NO" id="O3s-Uy-8xN">
+                                <rect key="frame" x="163" y="161" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="EOO-LY-cqD"/>
                                     <constraint firstAttribute="height" constant="48" id="Grr-hz-BDp"/>
@@ -285,6 +285,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Mp6-qK-odM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="62" id="1SV-AV-Nnr"/>
+                            <constraint firstItem="ZGw-wW-N3g" firstAttribute="top" secondItem="O3s-Uy-8xN" secondAttribute="bottom" constant="40" id="4l4-uB-Mw5"/>
+                            <constraint firstItem="O3s-Uy-8xN" firstAttribute="top" secondItem="Mp6-qK-odM" secondAttribute="bottom" constant="1" id="5PT-Wa-JfL"/>
                             <constraint firstAttribute="centerX" secondItem="Mp6-qK-odM" secondAttribute="centerX" id="LJ0-ob-ah3"/>
                             <constraint firstAttribute="centerX" secondItem="ZGw-wW-N3g" secondAttribute="centerX" id="cFH-vz-9BH"/>
                             <constraint firstAttribute="centerX" secondItem="O3s-Uy-8xN" secondAttribute="centerX" id="jE7-7y-BGu"/>
@@ -347,8 +350,8 @@
                                                         <action selector="button_goToProfile:" destination="fMR-Uf-Zup" eventType="touchUpInside" id="MrJ-Xt-c3Z"/>
                                                     </connections>
                                                 </button>
-                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="top" misplaced="YES" scrollEnabled="NO" editable="NO" text="Name @handle" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oc-gx-eSN">
-                                                    <rect key="frame" x="62" y="9" width="310" height="20"/>
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="top" scrollEnabled="NO" editable="NO" text="Name @handle" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oc-gx-eSN">
+                                                    <rect key="frame" x="62" y="9" width="255" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -359,8 +362,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/14/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-mP-zSu">
-                                                    <rect key="frame" x="320" y="15" width="40" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/14/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-mP-zSu">
+                                                    <rect key="frame" x="265" y="15" width="40" height="14"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                                     </accessibility>
@@ -424,8 +427,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Body of the tweet" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
-                                                    <rect key="frame" x="62" y="31" width="305" height="77"/>
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Body of the tweet" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
+                                                    <rect key="frame" x="62" y="33" width="250" height="77"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -681,8 +684,8 @@
                                     <constraint firstAttribute="height" constant="45" id="okD-xb-jFc"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIF-WX-EKg">
-                                <rect key="frame" x="10" y="75" width="45" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIF-WX-EKg">
+                                <rect key="frame" x="10" y="77" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1v2-v8-Y4z"/>
                                     <constraint firstAttribute="width" constant="45" id="axs-WC-7eP"/>
@@ -700,8 +703,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label_Handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-Nv-CnU">
-                                <rect key="frame" x="68" y="102" width="82" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label_Handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-Nv-CnU">
+                                <rect key="frame" x="68" y="103" width="76" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
