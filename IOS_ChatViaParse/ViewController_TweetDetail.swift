@@ -41,17 +41,31 @@ class ViewController_TweetDetail: UIViewController {
     }
 
     
+    @IBAction func button_VisitProfile(sender: AnyObject) {
+    performSegueWithIdentifier("PresentProfileFromDetail", sender: self)
+    }
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "SegueFromDetailToReply" {
+        switch segue.identifier! {
+            case "SegueFromDetailToReply":
             if let destinationNavC = segue.destinationViewController as? UINavigationController {
                 if let vc = destinationNavC.topViewController as? ViewController_Compose {
                     vc.originalTweet_handle = self.origTweet.user!.handle!
                     vc.originalTweet_id = self.origTweet.idStr
                 }
             }
+            
+            case "PresentProfileFromDetail":
+                if let destinationNavC = segue.destinationViewController as? UINavigationController {
+                    if let vc = destinationNavC.topViewController as? ViewController_Profile {
+                        vc.user = self.origTweet.user!
+                    }
+                }
+            
+        default:
+            println("Unexpected segue ID")
             
         }
     }

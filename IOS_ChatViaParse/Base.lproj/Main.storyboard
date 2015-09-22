@@ -681,6 +681,19 @@
                                     <constraint firstAttribute="height" constant="45" id="okD-xb-jFc"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIF-WX-EKg">
+                                <rect key="frame" x="10" y="75" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1v2-v8-Y4z"/>
+                                    <constraint firstAttribute="width" constant="45" id="axs-WC-7eP"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_VisitProfile:" destination="qwD-bt-auL" eventType="touchUpInside" id="t5h-en-6Km"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label_Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYX-8m-itc">
                                 <rect key="frame" x="68" y="77" width="81" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -776,6 +789,7 @@
                         <constraints>
                             <constraint firstItem="5Ks-GJ-Ol9" firstAttribute="centerX" secondItem="3RA-xv-E8n" secondAttribute="centerX" id="2aZ-Qm-8x0"/>
                             <constraint firstItem="c1D-AI-fn4" firstAttribute="centerY" secondItem="Adn-VW-8fx" secondAttribute="centerY" id="4C9-Jv-jqr"/>
+                            <constraint firstItem="tiK-A6-GOg" firstAttribute="leading" secondItem="VIF-WX-EKg" secondAttribute="leading" id="8Q0-kb-hG3"/>
                             <constraint firstItem="c1D-AI-fn4" firstAttribute="centerY" secondItem="3RA-xv-E8n" secondAttribute="centerY" id="BZI-7O-7eM"/>
                             <constraint firstItem="Adn-VW-8fx" firstAttribute="centerX" secondItem="ZyG-tB-oG6" secondAttribute="centerX" id="Bjt-Ne-hN0"/>
                             <constraint firstItem="c1D-AI-fn4" firstAttribute="leading" secondItem="3Di-zb-AiY" secondAttribute="leading" constant="20" id="EO5-UM-HOr"/>
@@ -784,6 +798,7 @@
                             <constraint firstItem="v3J-22-a64" firstAttribute="centerY" secondItem="drw-Dc-PnH" secondAttribute="centerY" id="HG3-g0-IGe"/>
                             <constraint firstItem="hHQ-Ly-W0u" firstAttribute="top" secondItem="3Di-zb-AiY" secondAttribute="bottom" constant="35" id="J8R-ZK-lvd"/>
                             <constraint firstItem="v3J-22-a64" firstAttribute="top" secondItem="5Ks-GJ-Ol9" secondAttribute="bottom" constant="3" id="Ksp-eV-2Js"/>
+                            <constraint firstItem="tiK-A6-GOg" firstAttribute="top" secondItem="VIF-WX-EKg" secondAttribute="top" id="Lp5-ol-MI6"/>
                             <constraint firstItem="3Di-zb-AiY" firstAttribute="leading" secondItem="tiK-A6-GOg" secondAttribute="leading" id="MKo-eF-fgB"/>
                             <constraint firstItem="tiK-A6-GOg" firstAttribute="leading" secondItem="ei1-ja-q3F" secondAttribute="leading" constant="10" id="Ng9-i0-xLw"/>
                             <constraint firstItem="v3J-22-a64" firstAttribute="centerX" secondItem="5Ks-GJ-Ol9" secondAttribute="centerX" id="TbR-FN-ErS"/>
@@ -816,6 +831,7 @@
                         <outlet property="label_countRetweet" destination="v3J-22-a64" id="MZ3-8V-UXQ"/>
                         <outlet property="textview_Body" destination="3Di-zb-AiY" id="uTC-Fs-05x"/>
                         <segue destination="WTj-Pf-zJ8" kind="modal" identifier="SegueFromDetailToReply" id="ZT8-y4-BIx"/>
+                        <segue destination="GwK-Dx-jVX" kind="show" identifier="PresentProfileFromDetail" id="zo1-cm-psX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIg-xS-5FX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -849,6 +865,7 @@
         <image name="retweet" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zo1-cm-psX"/>
         <segue reference="ZT8-y4-BIx"/>
     </inferredMetricsTieBreakers>
 </document>
