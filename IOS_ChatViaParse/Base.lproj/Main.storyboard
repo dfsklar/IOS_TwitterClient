@@ -178,27 +178,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emv-hl-vPd">
-                                <rect key="frame" x="147" y="223" width="60" height="21"/>
+                                <rect key="frame" x="147" y="223" width="80" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="VT8-MS-fqd"/>
+                                    <constraint firstAttribute="width" constant="80" id="VT8-MS-fqd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSh-am-LhX">
-                                <rect key="frame" x="147" y="250" width="60" height="21"/>
+                                <rect key="frame" x="147" y="250" width="80" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="BsY-DH-ukA"/>
+                                    <constraint firstAttribute="width" constant="80" id="BsY-DH-ukA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pw-qq-CtU">
-                                <rect key="frame" x="147" y="278" width="60" height="21"/>
+                                <rect key="frame" x="147" y="278" width="80" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="tpa-oY-bAl"/>
+                                    <constraint firstAttribute="width" constant="80" id="tpa-oY-bAl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -238,8 +238,9 @@
                         <outlet property="count_mentors" destination="1Pw-qq-CtU" id="YRU-xg-iNn"/>
                         <outlet property="count_tweets" destination="emv-hl-vPd" id="S4z-x3-fB5"/>
                         <outlet property="image_profile" destination="Ih1-kx-i6o" id="JaP-pw-Xcs"/>
-                        <outlet property="label_handle" destination="h8n-JY-RHV" id="8B6-Nv-5G7"/>
+                        <outlet property="label_handle" destination="h8n-JY-RHV" id="Dmm-T4-xMH"/>
                         <outlet property="label_name" destination="a77-09-iwk" id="TXJ-AJ-CiQ"/>
+                        <outlet property="label_whoIsThis" destination="2G6-07-k5K" id="fx2-lh-L9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEp-bU-Fec" userLabel="First Responder" sceneMemberID="firstResponder"/>

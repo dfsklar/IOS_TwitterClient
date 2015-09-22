@@ -134,8 +134,10 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
             }
             
         case "PresentProfileFromTweetStack":
-            if let dest = segue.destinationViewController as? UINavigationController {
-            
+            if let destinationNavC = segue.destinationViewController as? UINavigationController {
+                if let vc = destinationNavC.topViewController as? ViewController_Profile {
+                    vc.user = self.userOfInterest
+                }
             }
             
         default:
