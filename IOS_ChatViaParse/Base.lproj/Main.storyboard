@@ -343,16 +343,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Body of the tweet" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
-                                                    <rect key="frame" x="62" y="33" width="305" height="77"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <accessibility key="accessibilityConfiguration">
-                                                        <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                                                        <bool key="isElement" value="NO"/>
-                                                    </accessibility>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/14/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-mP-zSu">
                                                     <rect key="frame" x="320" y="15" width="40" height="14"/>
                                                     <accessibility key="accessibilityConfiguration">
@@ -418,6 +408,16 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Body of the tweet" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-dM-kFC">
+                                                    <rect key="frame" x="62" y="31" width="305" height="77"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9UH-wH-88E" firstAttribute="top" secondItem="zEY-T0-uVy" secondAttribute="top" constant="14" id="1Wa-2y-6kY"/>
@@ -489,6 +489,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="navbar" destination="GwX-Le-f6w" id="Gsd-TC-8a9"/>
                         <outlet property="tweetStack" destination="Jhf-C4-cFO" id="LJH-MN-J9I"/>
                         <segue destination="WTj-Pf-zJ8" kind="presentation" identifier="VC_ComposeReply" id="PQ9-Sg-ogx"/>
                     </connections>

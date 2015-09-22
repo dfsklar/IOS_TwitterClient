@@ -13,8 +13,15 @@ import UIKit
 
 class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITableViewDelegate, Protocol_ReplyToTweet {
     
+    
+    @IBOutlet weak var navbar: UINavigationItem!
+
+    
+    
     @IBOutlet weak var tweetStack: UITableView!
 
+    
+    
 
     // This tweetstack can be used to show any collection of tweets, not just the authuser's own set.
     // These variables set up the "source" and "mode" for the tweet-collection fetching.
@@ -28,15 +35,34 @@ class ViewController_TweetStack: UIViewController, UITableViewDataSource, UITabl
     var originalTweet : Tweet!
 
 
-
     var refreshControl: UIRefreshControl!
 
+    
+    
+    func determineTitle() -> String {
+        switch fetch_mode {
+        case .Mentions:
+            return "Mentions of You"
+        case .Timeline:
+            return "Your Timeline"
+        }
+    }
+    
+    func determineLeftRightButtonVis() -> Bool {
+        return (fetch_mode == .Timeline) && (fetch_userId == nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tweetStack.dataSource = self
         tweetStack.delegate = self
+        
+        navbar.title = determineTitle()
+        let showButtons = determineLeftRightButtonVis()
+        navbar.leftBarButtonItem!.enabled = !showButtons
+        navbar.rightBarButtonItem!.enabled = !showButtons
         
         tweetStack.rowHeight = UITableViewAutomaticDimension
         tweetStack.estimatedRowHeight = 200

@@ -43,25 +43,10 @@ class WrapperViewController: UIViewController {
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
         
-        let doWrapCenterviewInNav = false
-        
-        if (doWrapCenterviewInNav) {
-            // wrap the centerViewController in a navigation controller, so we can push views to it
-            // and display bar button items in the navigation bar
-            centerNavigationController = UINavigationController(rootViewController: centerViewController)
-            view.addSubview(centerNavigationController.view)
-            addChildViewController(centerNavigationController)
-            
-            centerNavigationController.didMoveToParentViewController(self)
-                    centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
-        }else {
-            view.addSubview(centerViewController.view)
-            addChildViewController(centerViewController)
-            centerViewController.didMoveToParentViewController(self)
-                    centerViewController.view.addGestureRecognizer(panGestureRecognizer)
-        }
-        
-
+        view.addSubview(centerViewController.view)
+        addChildViewController(centerViewController)
+        centerViewController.didMoveToParentViewController(self)
+        centerViewController.view.addGestureRecognizer(panGestureRecognizer)        
     }
     
 }
