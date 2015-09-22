@@ -61,7 +61,7 @@ class ViewController_Chat: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func loadOrReloadTweets() {
-        TwitterClient.sharedInstance.fetchTweets { (result, error) -> Void in
+        TwitterClient.sharedInstance.fetchTweets(nil) { (result, error) -> Void in
             self.tweetCollection = result
             self.tweetStack.reloadData()
             SwiftLoader.hide()

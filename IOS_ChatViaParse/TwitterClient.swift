@@ -44,9 +44,49 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     }
     
     
-    func fetchTweets(completionBlock: (result: [Tweet], error: NSError?) -> Void) {
+    
+    
+    
+    
+    
+    
+    func fetchUserProfile(userId: String?, completionBlock: (user: User?, error: NSError?) -> Void) {
+        
+        var params = [String: String]()
+        params["user_id"] = userId!
+        
+        self.GET("1.1/users/show.json", parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                
+                if let dict = response as? NSDictionary {
+                    let thisUser = User(dict: dict)
+                    completionBlock(user: thisUser, error: nil)
+                } else {
+                    completionBlock(user: nil, error: nil)
+                }
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                completionBlock(user: nil, error: error)
+            }
+        )
+    }
+    
+    
+    
 
-        self.GET("1.1/statuses/home_timeline.json", parameters: nil,
+    
+    // If a user is provided, this will obtain an arbitrary user timeline.
+    // Otherwise, it will obtain the "home timeline" of the auth'd user.
+    func fetchTweets(idUser: String?, completionBlock: (result: [Tweet], error: NSError?) -> Void) {
+        var params = [String: String]()
+        var urlGet = "1.1/statuses/home_timeline.json"
+        if let idUser = idUser {
+            params["user_id"] = idUser
+            urlGet = "1.1/statuses/user_timeline.json"
+        }
+        
+        self.GET(urlGet, parameters: params,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 var result : [Tweet] = []
                 let serRep = (response).serializedRepresentation
@@ -54,7 +94,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                     for tweetDict in listOfTweets {
                         result.append(Tweet(dict: tweetDict as! NSDictionary))
                     }
-                }		
+                }
                 completionBlock(result: result, error: nil)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
@@ -63,7 +103,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         )
     }
     
-
+    
     
     
     
@@ -117,6 +157,9 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         )
     }
     
+    
+
+   
     
     
     func sendReplyTweet(message: String, originalTweetID: String, completionBlock: (error: NSError?) -> Void) {

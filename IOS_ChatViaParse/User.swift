@@ -20,13 +20,22 @@ class User: NSObject {
     var name: String?
     var handle: String?
     var profileImage: NSURL?
+    var bgImage: NSURL?
     var serialization: NSDictionary
+    
+    var countTweets: Int?
+    var countFollowers: Int?
+    var countMentors: Int?
     
     init(dict: NSDictionary) {
         serialization = dict
         name = dict["name"] as? String
         handle = dict["screen_name"] as? String
         profileImage = NSURL(string: dict["profile_image_url"] as! String)
+        bgImage = NSURL(string: dict["profile_background_image_url"] as! String)
+        countTweets = dict["statuses_count"] as? Int
+        countMentors = dict["friends_count"] as? Int
+        countFollowers = dict["followers_count"] as? Int
     }
     
 
